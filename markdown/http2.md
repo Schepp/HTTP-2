@@ -469,7 +469,7 @@ Idle-Time:
 <br><br><br><br>
 # Handlungsanweisung
 
-Was bedeutet der Einsatz von HTTP/2 für die etablierten Performance-Best-Practices?
+Jetzt anfangen, HTTP/2 bzw. SPDY zu nutzen!
 ---
 # Handlungsanweisung
 
