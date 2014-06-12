@@ -1,0 +1,120 @@
+.reveal {
+  font-size: 60px;
+
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.25em }
+  h3 { font-size: 1.1em;	}
+  h4 { font-size: 1em;	}
+
+  h1, h2, h3, h4, h5, h6, ol, ul, p, table, pre {
+	margin-bottom: 2rem;
+
+	html.inverted & {
+	  color: #FFF;
+	  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 8px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000;
+	}
+  }
+
+  pre code {
+	max-height: 700px;
+	filter: none;
+	text-shadow: none;
+  }
+
+  html.faded & .backgrounds {
+	opacity: 0.5;
+  }
+  html.grayscaled & .backgrounds {
+	filter: greyscale(1);
+  }
+
+  pre + pre {
+	margin-top: -1em;
+  }
+
+  section img,
+  section video {
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	filter: drop-shadow(0 0 1px #CCC) drop-shadow(0 0 10px #FFF);
+  }
+
+  li {
+	margin-bottom: 1rem;
+  }
+
+  table  {
+	table-layout: fixed;
+	width: 100%;
+	max-width: 1900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em 0;
+	font-size: 0.75em;
+	border-top: 1px solid currentcolor;
+	border-bottom: 1px solid currentcolor;
+
+    th, td {
+      padding: 0 0.2em;
+      white-space: nowrap;
+      text-align:  center;
+
+      &:first-child {
+		text-align: left;
+	  }
+
+	  img {
+        margin: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .datatable + table {
+	font-size: 0.5em;
+	line-height: 1.4;
+	border-collapse: collapse;
+
+	tr:nth-child(even) {
+	  background: rgba(255,255,255,.5);
+	}
+	th, td {
+	  text-align:  left;
+	}
+  }
+
+  blockquote {
+	quotes: "“" "”" "‘" "’";
+	position: relative;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	background-color: rgba(0,0,0,.9);
+	font-style: italic;
+	text-align: left;
+
+	> *:last-child {
+	  margin-bottom: 0;
+	}
+	&:before,
+	&:after {
+	  position: absolute;
+	  font-family: Times, serif;
+	  font-size: 150%;
+	  font-weight: bold;
+	}
+	&:before {
+	  top: 0;
+	  right: 102%;
+	  content: open-quote;
+	}
+	&:after {
+	  bottom: -20px;
+	  left: 102%;
+	  content: close-quote;
+	  vertical-align: bottom;
+	}
+  }
+}

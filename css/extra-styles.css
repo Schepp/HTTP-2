@@ -1,0 +1,112 @@
+@charset "CP850";
+.reveal {
+  font-size: 60px;
+}
+.reveal h1 {
+  font-size: 2em;
+}
+.reveal h2 {
+  font-size: 1.25em;
+}
+.reveal h3 {
+  font-size: 1.1em;
+}
+.reveal h4 {
+  font-size: 1em;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal ol, .reveal ul, .reveal p, .reveal table, .reveal pre {
+  margin-bottom: 2rem;
+}
+html.inverted .reveal h1, html.inverted .reveal h2, html.inverted .reveal h3, html.inverted .reveal h4, html.inverted .reveal h5, html.inverted .reveal h6, html.inverted .reveal ol, html.inverted .reveal ul, html.inverted .reveal p, html.inverted .reveal table, html.inverted .reveal pre {
+  color: #FFF;
+  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 8px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000;
+}
+.reveal pre code {
+  max-height: 700px;
+  filter: none;
+  text-shadow: none;
+}
+html.faded .reveal .backgrounds {
+  opacity: 0.5;
+}
+html.grayscaled .reveal .backgrounds {
+  filter: greyscale(1);
+}
+.reveal pre + pre {
+  margin-top: -1em;
+}
+.reveal section img,
+.reveal section video {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 0 1px #cccccc) drop-shadow(0 0 10px white);
+}
+.reveal li {
+  margin-bottom: 1rem;
+}
+.reveal table {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em 0;
+  font-size: 0.75em;
+  border-top: 1px solid currentcolor;
+  border-bottom: 1px solid currentcolor;
+}
+.reveal table th, .reveal table td {
+  padding: 0 0.2em;
+  white-space: nowrap;
+  text-align: center;
+}
+.reveal table th:first-child, .reveal table td:first-child {
+  text-align: left;
+}
+.reveal table th img, .reveal table td img {
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.reveal .datatable + table {
+  font-size: 0.5em;
+  line-height: 1.4;
+  border-collapse: collapse;
+}
+.reveal .datatable + table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.5);
+}
+.reveal .datatable + table th, .reveal .datatable + table td {
+  text-align: left;
+}
+.reveal blockquote {
+  quotes: "“" "”" "‘" "’";
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  font-style: italic;
+  text-align: left;
+}
+.reveal blockquote > *:last-child {
+  margin-bottom: 0;
+}
+.reveal blockquote:before, .reveal blockquote:after {
+  position: absolute;
+  font-family: Times, serif;
+  font-size: 150%;
+  font-weight: bold;
+}
+.reveal blockquote:before {
+  top: 0;
+  right: 102%;
+  content: open-quote;
+}
+.reveal blockquote:after {
+  bottom: -20px;
+  left: 102%;
+  content: close-quote;
+  vertical-align: bottom;
+}

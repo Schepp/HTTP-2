@@ -1,0 +1,521 @@
+<!-- .slide: data-background="images/backgrounds/stock-photo-bright-colorful-sunset-on-the-sea-with-beautiful-clouds-197424404.jpg" data-state="inverted" -->
+
+Wir schreiben das Jahr...
+
+<h1 class="fragment">1991</h1>
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-soviet-communistic-background-147916586.jpg" data-state="inverted" -->
+
+# Ende der Sowjetunion
+---
+<!-- .slide: data-background="images/backgrounds/nevermind.jpg" data-state="inverted" -->
+
+# Nirvana Nevermind
+---
+<!-- .slide: data-background="images/backgrounds/1280px-Tim_Berners-Lee_CP_2.jpg" data-state="inverted faded grayscaled" -->
+
+und
+
+# HTTP/0.9
+
+findet seine erste Erwähnung
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted faded" -->
+
+# 1996
+
+offiziell als HTTP/1.0 spezifiziert.
+---
+# HTTP/1.0
+
+Je eine kurzlebige TCP-Verbindung pro HTTP-Abfrage/Antwort-Pärchen
+
+![HTTP/1.0 TCP](images/HTTP-1.0-TCP.png)
+---
+# HTTP/1.0
+
+Daten werden ASCII Codiert übertragen
+
+![HTTP-Request](images/HTTP-Request.png)
+---
+# HTTP/1.0
+<!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted faded" -->
+
+Header sind beliebig erweiterbar und werden bei jeder Anfrage mitgeschickt
+
+```
+GET /fotostrecke/screenshots-spiegel-online-1996-bis-heute-fotostrecke-16056-3.html HTTP/1.1
+Host: www.spiegel.de
+Connection: keep-alive
+Cache-Control: no-cache
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Pragma: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36
+DNT: 1
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4,fr;q=0.2
+Cookie: POPUPCHECK=1402636825271; JSESSIONID=FC8674D0216AB1B92E09619BCD8CC9C7; spVcData2=6-10%3B10-15; __utma=159392383.976977501.1321345516.1402553897.1402569936.627; __utmc=159392383; __utmz=159392383.1402553897.626.40.utmcsr=facebook.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmv=159392383.|1=custID=f380b31359c26298908199a247d8a3f1=1; mx_nam_id=03de4a6b-b79e-4c74-81eb-7c4999e36205
+ ```
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted faded" -->
+
+# ab 1997
+
+wird HTTP/1.1 entwickelt. Es wird 1999 spezifiziert.
+---
+# HTTP/1.1
+
+Spezifiziert persistente TCP-Verbindungen
+
+![HTTP/1.1 TCP](images/HTTP-1.1-TCP.png)
+---
+# HTTP/1.1
+
+Persistente TCP-Verbindungen helfen, den Effekt von TCP Slow Start zu reduzieren
+
+![TCP Slow Start](images/TCP-Slow-Start.png)
+---
+# HTTP/1.1
+
+Um die Serverlast herunterzufahren wird die Anzahl erwünschter TCP-Verbindungen eingeschränkt:
+
+> single-user client SHOULD NOT maintain more than 2 connections with any server or proxy.
+
+In der Praxis halten die Browser 6 Verbindungen zu einem Host auf.
+
+<p class="fragment">Stehen sie hinter einem Proxy sind es nur 2 - 4.</p>
+---
+# HTTP/1.1
+
+Spezifiziert außerdem Pipelining
+
+![HTTP/1.1 TCP](images/HTTP-1.1-TCP-Pipelining.png)
+---
+# HTTP/1.1
+
+Beim Pipelining kann ein Requests abgesetzt werden, noch BEVOR die Antwort des vorherigen da ist.
+
+![HTTP/1.1 TCP](images/HTTP-1.1-TCP-Pipelining-2.png)
+---
+# HTTP/1.1
+
+Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nicht mehr aufaddiert.
+
+Pardon: WÜRDEN...
+---
+<!-- .slide: data-background="images/reactions/tumblr_lbdnzkTGkq1qe0eclo1_r1_500.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Proxies sagen leider nein zu Pipelining.
+
+<p class="fragment">Schade.</p>
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-technology-internet-modern-lifestyle-concept-full-length-young-business-woman-or-student-girl-197553677.jpg" data-state="inverted" -->
+
+# Währenddessen im Web...
+---
+<!-- .slide: data-background="images/backgrounds/website-1991.png" data-state="inverted" -->
+
+# Webseite 1991
+---
+<!-- .slide: data-background="images/backgrounds/website-1991.png" data-state="inverted faded" -->
+
+# 1 Request
+# 2.4 KB
+---
+<!-- .slide: data-background="images/reactions/tumblr_inline_my8bn7Af5g1raprkq.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Seite schnell, alles smooth, macht Spaß!
+---
+<!-- .slide: data-background="images/backgrounds/website-1996.png" data-state="inverted" -->
+
+# Webseite 1996
+---
+<!-- .slide: data-background="images/backgrounds/website-1996.png" data-state="inverted faded" -->
+
+# 7 Requests
+# 22 KB
+---
+<!-- .slide: data-background="images/reactions/tumblr_inline_my8bn7Af5g1raprkq.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Alles okay!
+---
+<!-- .slide: data-background="images/backgrounds/website-1998.png" data-state="inverted" -->
+
+# Webseite 1998
+---
+<!-- .slide: data-background="images/backgrounds/website-1998.png" data-state="inverted faded" -->
+
+# 85 Requests
+# 291 KB
+---
+<!-- .slide: data-background="images/reactions/r4lKi9i.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Ähm... 85 Requests?
+---
+<!-- .slide: data-background="images/backgrounds/website-2014.png" data-state="inverted" -->
+
+# Webseite 2014
+---
+<!-- .slide: data-background="images/backgrounds/website-2014.png" data-state="inverted faded" -->
+
+# 172 Requests
+# 1.3 MB
+<h1 class="fragment">(ohne Werbung)</h1>
+
+---
+<!-- .slide: data-background="images/reactions/OaR0Y38.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# 125 Requests? WTF-Copter!
+---
+# Entwicklung 2010 - 2014
+
+![HTTP Archive Trends](images/HTTP-Archive-Trends-Total-Size.png)
+
+* Größe: von 700 KB auf 1.700 KB
+* Requests: von 74 auf 95
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-large-group-of-disconnected-blue-internet-cables-195671744.jpg" data-state="inverted" -->
+
+# Breitband to the Rescue?
+---
+# Nope!
+
+![Bandwidth Benefits](images/Bandwidth-Benefits.png)
+---
+# Problem Nr. 1: Latenzen!
+
+![Bandwidth Benefits](images/Bandwidth-vs-Latency.png)
+---
+
+# Latenz durch Distanz
+
+| innerhalb Deutschlands | < 50 ms       |
+|------------------------|---------------|
+| USA                    | 100–150 ms    |
+| Fernost                | bis zu 300 ms |
+
+---
+
+# Latenz durch Technologie
+
+| 100BaseT-Ethernet      | 1 ms        |
+|------------------------|-------------|
+| WLAN 802.11b           | 10 ms       |
+| Kabel allgemein        | 10 ms       |
+| DSL-6000 ohne Fastpath | 40 ms       |
+| DSL-2000 ohne Fastpath | 55 ms       |
+| ISDN                   | 200 ms      |
+| UMTS                   | 300–400 ms  |
+| GPRS                   | 700–1000 ms |
+
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted" -->
+
+# Problem Nr. 2: HTTP/1.x!
+
+---
+# Geringe Parallelisierbarkeit
+
+![Bandwidth Benefits](images/HTTP-Blockade.png)
+
+Browser machen nur 6 parallele TCP-Verbindungen auf.
+
+<p class="fragment">(bzw. 2 - 4 hinter einem Proxy)</p>
+
+<p class="fragment">Dadurch: Aufaddieren von Latenzen</p>
+---
+# Ungenutzte Wartezeiten
+
+![Bandwidth Benefits](images/HTTP-Latencies.png)
+
+Requests müssen in Reihe abgearbeitet werden. Pipelining würde da helfen.
+---
+# Kein Abbruchmechanismus
+
+Sind alle TCP-Verbindungen mit Anfragen belegt, kann sich der Browser vorerst nicht mehr umentscheiden.
+
+<p class="fragment">Blöd, wenn der Browser genau dann das `<script>`-Tag im Fuß der Seite findet.</p>
+---
+# Aufgeblasene Header
+
+Das ständige Mitsenden der Header führt zu langsameren Anfragen.
+
+<p class="fragment">Der SPON Header mit samt Cookie kommt z.B. auf knapp 1 KB.</p>
+---
+<!-- .slide: data-background="images/reactions/tumblr_inline_mmrb6wlC0g1qz4rgp.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Was tun wir bisher dagegen?
+---
+# Anzahl Requests reduzieren!
+
+<ul>
+	<li class="fragment">JS & CSS Concatenieren</li>
+	<li class="fragment">Bitmap/SVG-Sprites erzeugen</li>
+	<li class="fragment">Icon-Fonts erstellen</li>
+	<li class="fragment">Ressourcen via Data-URIs inlinen</li>
+</ul>
+
+<p class="fragment">Nachteil: Ändert sich ein Fragment aus diesen Datei-Sandwichs, muss alles neu übertragen werden.</p>
+---
+# Ressourcen über mehrere Hosts verteilen
+
+<ul>
+	<li class="fragment">Jeder Extra-Host ermöglicht 6 zusätzliche TCP-Verbindungen</li>
+	<li class="fragment">Cookie-Header werden nur noch an den Haupt-Host gesendet</li>
+</ul>
+
+<p class="fragment">Nachteil: Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden. Ab 4 Hosts dreht sich der Vorteil um.</p>
+---
+<!-- .slide: data-background="images/reactions/tumblr_inline_n1h1w9xP6K1raprkq.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Puh, was für ein Aufwand!
+---
+<!-- .slide: data-background="images/reactions/SJxHr.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Enter HTTP/2, aka SPDY!
+---
+# HTTP/2
+
+Daten werden Binär codiert übertragen. Das ist effizienter und fehlertoleranter.
+---
+# HTTP/2
+
+Headerdaten werden nur einmal zwischen den Parteien ausgetauscht. Sie gelten fortan für alle nachfolgenden Requests automatisch.
+
+<p class="fragment">Wenn sich Header-Abschnitte später ändern, werden nur diese Teile neu übertragen (z.B. nach einem Login).</p>
+---
+# HTTP/2
+
+Headerdaten werden komprimiert.
+
+> Google observed an ~88% reduction in the size of request headers and an ~85% reduction in the size of response headers after enabling compression. This amounted to a saving of between 45 and 1142 ms in the overall page load time.
+
+[Quelle](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
+---
+# HTTP/2
+
+Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
+
+<p class="fragment">Alle Übertragungsfragmente werden in diesen einen Datenstrom hineingewoben<span class="fragment"> (gemultiplexed)</span></p>
+
+<p class="fragment">Es handelt sich also um ein automatisches Spriting/Concatenieren auf Protokollebene!</p>
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-water-falls-at-glen-park-williamsville-new-york-198098444.jpg" data-state="inverted" -->
+
+# HTTP/2 ist wie eine Stromschnelle
+---
+## Prioritized Streams
+
+HTTP/2 kann das Mischverhältnis der in seinen Datenstrom gewobenen Daten zu jeder Zeit verändern und an neue Gegebenheiten anpassen.
+
+<p class="fragment">Auch kann die Übertragung einer angefangenen Datei komplett gestoppt und verworfen werden.</p>
+---
+## Prioritized Streams
+
+Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
+
+<ul>
+	<li class="fragment">Hoch: Hauptdokument & Frames</li>
+	<li class="fragment">Mittel: JavaScript, CSS und Fonts</li>
+	<li class="fragment">Niedrig: `<link rel="subresource">`, `<video>`, `<audio>`, `<object>` und AJAX-Calls</li>
+	<li class="fragment">Sehr niedrig: Bilder, Favicon</li>
+</ul>
+---
+## Prioritized Streams
+
+Ebenso kann der Server Ressoucen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
+
+<p class="fragment">Das nennt sich dann "HTTP Push" (oder auch "SPDY Push").</p>
+---
+## SPDY Push
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe>
+---
+## SPDY Push
+
+[Noch eine Demo](https://www.modspdy.com/server-push/)
+---
+# HTTP/2
+
+ist bestandskompatibel und vollkommen transparent.
+
+<p class="fragment">HTTP/2 wird grundsätzlich SSL-verschlüsselt verpackt, damit keine Übermittlungsstelle und auch kein Proxy etwas kaputt macht.</p>
+
+<p class="fragment">(um zu vermeiden, was mit HTTP-Pipelining passiert ist)</p>
+---
+# HTTP/2
+
+Zudem wird die SSL-Handshake-Phase genutzt, um sich gegenseitig über HTTP/2-Fähigkeiten zu informieren.
+---
+#HTTP/2
+
+Eine Aushandlung via unverschlüsseltem HTTP ist möglich:
+```
+GET /page HTTP/1.1
+Host: server.example.com
+Connection: Upgrade, HTTP2-Settings
+Upgrade: HTTP/2.0
+HTTP2-Settings: (SETTINGS payload in Base64)
+```
+```
+HTTP/1.1 200 OK 3
+Content-length: 243
+Content-type: text/html
+(... HTTP 1.1 response ...)
+```
+oder
+```
+HTTP/1.1 101 Switching Protocols 4
+Connection: Upgrade
+Upgrade: HTTP/2.0
+(... HTTP 2.0 response ...)
+```
+<p class="fragment">(Anwendungsszenario: Server-zu-Server-Kommunikation)</p>
+---
+# Serverseitige Vorteile
+
+> SPDY clients consume one Apache worker instead of six
+
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+# Benchmark
+
+|                                                         | HTTP                                     | HTTPS                                    |SPDY                                     |
+|---------------------------------------------------------|------------------------------------------|------------------------------------------|-----------------------------------------|
+| Maximum pages/s                                         | 16.3 @ 120 users                         | 15.9 @ 120 users                         | 98 @ 777 users                          |
+| Response time @ 100 users                               | 1.1s                                     | 1.3s                                     | 1.1s                                    |
+| Response time @ 120 users                               | 1.4 s                                    | 1.5s                                     | 1.1s                                    |
+| Response time @ 200 users                               | 7.1s                                     | 7.8s                                     | 1.1s                                    |
+| Response time @ 777 users                               | 70.2s                                    | 72s                                      | 2.7s                                    |
+| First error                                             | 405 Users                                | 225 Users                                | 884 Users                               |
+
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+# Speicherverbrauch
+
+| System Memory | 01:00    | 02:00    | Diff = Consumed              |
+|---------------|----------|----------|------------------------------|
+| HTTP          | 3,357 MB | 3,416 MB | 59 MB                        |
+| HTTPS         | 3,500 MB | 3,579 MB | 79 MB                        |
+| SPDY          | 3,607 MB | 3,631 MB | 24 MB                        |
+
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+# CPU-Auslastung
+
+Idle-Time:
+
+![CPU Idle Times](images/spdy-linux-cpu-idle.png)
+
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+# Browsersupport Desktop
+
+| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| &#10004; | 8+ | &#10004; | 11+* |
+
+*= nur IE11 auf Windows 8+
+
+[Can I Use](http://caniuse.com/spdy)
+---
+# Browsersupport Mobile
+
+| ![Chrome](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| 3+ | 33+ | 8+ | 24+ | 11+ (WP8.1) |
+
+[Can I Use](http://caniuse.com/spdy)
+---
+# Serverseitige Unterstützung
+
+* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache
+* [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html) für NGINX
+* [Eingebautes SPDY](http://wiki.eclipse.org/Jetty/Feature/SPDY) in Jetty (ab 7.6.2)
+* Eingebautes SPDY in OpenLiteSpeed (ab 1.2.7)
+
+---
+<!-- .slide: data-background="images/backgrounds/stock-photo-kiev-ukraine-june-facebook-web-page-closeup-with-notifications-of-new-friends-request-and-197767229.jpg" data-state="inverted faded" -->
+
+# Seiten, die SPDY nutzen
+
+* Google
+* Facebook
+* Twitter
+* WordPress.com
+* Cloudflare CDN
+* Synology
+
+---
+<!-- .slide: data-background="images/reactions/tumblr_inline_mxzcnayKCb1raprkq.gif" data-state="inverted" -->
+
+<br><br><br><br>
+<br><br><br><br>
+# Handlungsanweisung
+
+Was bedeutet der Einsatz von HTTP/2 für die etablierten Performance-Best-Practices?
+---
+# Handlungsanweisung
+
+Domain-Sharding vermeiden! Es bringt uns keinerlei Vorteile mehr.
+
+<p class="fragment">(stattdessen erzeugt es nur überflüssige DNS-Lookups)</p>
+
+<p class="fragment">Außerdem: Ein einzelner Host kann die Ressourcen-Priorisierung besser verwalten.</p>
+
+<p class="fragment">Den Einsatz von CDNs neu abwägen.</p>
+---
+# Handlungsanweisung
+
+Spriting und Concatenieren absolut vermeiden!
+
+<p class="fragment">Stattdessen: Zusehen, ob man seine Dateien nicht automatisiert noch kleiner bekommt!</p>
+
+<p class="fragment">(krank, oder?)</p>
+
+<p class="fragment">(Aber so kommen wir nah an das Konzept von Delta-Updates heran)</p>
+---
+# Handlungsanweisung
+
+Im Server HTTP Push für alle kritischen Ressourcen konfigurieren.
+
+z.B. in Apache via Header-Directive:
+
+```
+X-Associated-Content: "https://www.example.com/styles/foo.css",
+     "/scripts/bar.js?q=4":2,
+     "https://www.example.com/images/baz.png":5,
+     "https://www.example.com/generate_image.php?w=32&h=24"
+     ```
+
+(Prio 0 = Hoch, Prio 7 = Niedrig)
+
+---
+# Zukunftsmusik
+
+* [HTTP/3](http://www.mnot.net/blog/2014/01/30/http2_expectations) mit weiteren Features wie z.B. DNS-Push.
+* [QUIC](http://blog.chromium.org/2013/06/experimenting-with-quic.html), das auf UDP aufsetzt, und von den Google Services schon heute genutzt wird.
+
+---
+# Weiterführende Literatur
+
+* [High Performance Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_UPGRADE)
+* [Making The Web Faster With SPDY](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
+* [SPDYCheck.org](http://spdycheck.org/)
+* [Evaluating the Performance of SPDY-enabled Web Servers](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
