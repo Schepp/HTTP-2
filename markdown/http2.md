@@ -69,11 +69,25 @@ Spezifiziert persistente TCP-Verbindungen
 
 ![HTTP/1.1 TCP](images/HTTP-1.1-TCP.png)
 ---
-# HTTP/1.1
+# Persistente TCP-Verbindungen
 
-Persistente TCP-Verbindungen helfen, den Effekt von TCP Slow Start zu reduzieren
+...helfen, den Effekt von TCP Slow Start zu reduzieren
 
-![TCP Slow Start](images/TCP-Slow-Start.png)
+![TCP Slow Start](images/tcp_slow_start.png)
+
+[Quelle](https://libosong.appspot.com/spdy/index.html#20)
+---
+# TCP Slow Start
+
+![TCP Slow Start](images/slow_start_graph.png)
+
+[Quelle](http://packetlife.net/blog/2011/jul/5/tcp-slow-start/)
+---
+# TCP Slow Start
+
+![TCP Slow Start](images/tcp_slow_start_request.png)
+
+[Quelle](https://libosong.appspot.com/spdy/index.html#21)
 ---
 # HTTP/1.1
 
@@ -101,7 +115,7 @@ Beim Pipelining kann ein Requests abgesetzt werden, noch BEVOR die Antwort des v
 
 Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nicht mehr aufaddiert.
 
-Pardon: WÜRDEN...
+<p class="fragment">Pardon: WÜRDEN...</p>
 ---
 <!-- .slide: data-background="images/reactions/tumblr_lbdnzkTGkq1qe0eclo1_r1_500.gif" data-state="inverted" -->
 
@@ -110,6 +124,18 @@ Pardon: WÜRDEN...
 # Proxies sagen leider nein zu Pipelining.
 
 <p class="fragment">Schade.</p>
+---
+# Pipelining Support
+
+| System  |                                   |
+|---------|-----------------------------------|
+| IE8     | NEIN                              |
+| Chrome  | JA, aber abgeschaltet             |
+| Firefox | JA, aber abgeschaltet             |
+| Server  | JA                                |
+| Proxy   | NEIN                              |
+
+[Quelle](https://libosong.appspot.com/spdy/index.html#17)
 ---
 <!-- .slide: data-background="images/backgrounds/stock-photo-technology-internet-modern-lifestyle-concept-full-length-young-business-woman-or-student-girl-197553677.jpg" data-state="inverted" -->
 
@@ -122,7 +148,6 @@ Pardon: WÜRDEN...
 <!-- .slide: data-background="images/backgrounds/website-1991.png" data-state="inverted faded" -->
 
 # 1 Request
-# 2.4 KB
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_my8bn7Af5g1raprkq.gif" data-state="inverted" -->
 
@@ -137,7 +162,6 @@ Pardon: WÜRDEN...
 <!-- .slide: data-background="images/backgrounds/website-1996.png" data-state="inverted faded" -->
 
 # 7 Requests
-# 22 KB
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_my8bn7Af5g1raprkq.gif" data-state="inverted" -->
 
@@ -152,7 +176,6 @@ Pardon: WÜRDEN...
 <!-- .slide: data-background="images/backgrounds/website-1998.png" data-state="inverted faded" -->
 
 # 85 Requests
-# 291 KB
 ---
 <!-- .slide: data-background="images/reactions/r4lKi9i.gif" data-state="inverted" -->
 
@@ -167,7 +190,6 @@ Pardon: WÜRDEN...
 <!-- .slide: data-background="images/backgrounds/website-2014.png" data-state="inverted faded" -->
 
 # 172 Requests
-# 1.3 MB
 <h1 class="fragment">(ohne Werbung)</h1>
 
 ---
@@ -177,12 +199,11 @@ Pardon: WÜRDEN...
 <br><br><br><br>
 # 125 Requests? WTF-Copter!
 ---
-# Entwicklung 2010 - 2014
+# 1995 - heute
 
 ![HTTP Archive Trends](images/HTTP-Archive-Trends-Total-Size.png)
 
-* Größe: von 700 KB auf 1.700 KB
-* Requests: von 74 auf 95
+HTTP Requests: von 74 auf 96
 ---
 <!-- .slide: data-background="images/backgrounds/stock-photo-large-group-of-disconnected-blue-internet-cables-195671744.jpg" data-state="inverted" -->
 
@@ -191,10 +212,18 @@ Pardon: WÜRDEN...
 # Nope!
 
 ![Bandwidth Benefits](images/Bandwidth-Benefits.png)
+
+[Quelle](https://docs.google.com/a/chromium.org/viewer?a=v&pid=sites&srcid=Y2hyb21pdW0ub3JnfGRldnxneDoxMzcyOWI1N2I4YzI3NzE2)
 ---
+
+> An increase from 5Mbps to 10Mbps results in a disappointing 5% improvement in page load times.
+
+[Google](https://docs.google.com/a/chromium.org/viewer?a=v&pid=sites&srcid=Y2hyb21pdW0ub3JnfGRldnxneDoxMzcyOWI1N2I4YzI3NzE2)
+
+---
+
 # Problem Nr. 1: Latenzen!
 
-![Bandwidth Benefits](images/Bandwidth-vs-Latency.png)
 ---
 
 # Latenz durch Distanz
@@ -219,6 +248,47 @@ Pardon: WÜRDEN...
 | GPRS                   | 700–1000 ms |
 
 ---
+
+# Blockade durch serverseitige Verarbeitung
+
+Zeitverlust abhängig von Servergeschwindigkeit
+
+---
+
+# Einwirkung von Latenzen: ...
+
+---
+
+<video data-autoplay class="stretch" loop src="images/Bandbreite%20low.mp4"></video>
+
+---
+
+| Abschnitt        | Zeitverlust |
+|------------------|-------------|
+| Latenz           | 90 ms       |
+| Übertragungszeit | 135 ms      |
+| Wartezeit Server | 45 ms       |
+| **Gesamtzeit**   | **270 ms**  |
+
+---
+
+# Effekt von 3-facher Bandbreite: ...
+
+---
+
+<video data-autoplay class="stretch" loop src="images/Bandbreite%20low%20and%20high.mp4"></video>
+
+---
+
+| Abschnitt        | 1x Bandbreite | 3x Bandbreite |
+|------------------|---------------|---------------|
+| Latenz           | 90 ms         | 90 ms         |
+| Übertragungszeit | <span style="color: #FF6666">135 ms</span>        | <span style="color: #66FF99">45 ms</span>         |
+| Wartezeit Server | 45 ms         | 45 ms         |
+| Gesamtzeit       | <span style="color: #FF6666">270 ms</span>        | <span style="color: #66FF99">180 ms</span>         |
+
+---
+
 <!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted" -->
 
 # Problem Nr. 2: HTTP/1.x!
@@ -232,13 +302,15 @@ Browser machen nur 6 parallele TCP-Verbindungen auf.
 
 <p class="fragment">(bzw. 2 - 4 hinter einem Proxy)</p>
 
-<p class="fragment">Dadurch: Aufaddieren von Latenzen</p>
+<p class="fragment">Das Ergebnis: Aufaddieren von Latenzen</p>
 ---
 # Ungenutzte Wartezeiten
 
 ![Bandwidth Benefits](images/HTTP-Latencies.png)
 
-Requests müssen in Reihe abgearbeitet werden. Pipelining würde da helfen.
+Requests müssen in Reihe abgearbeitet werden.
+
+Pipelining würde da helfen.
 ---
 # Kein Abbruchmechanismus
 
@@ -250,6 +322,8 @@ Sind alle TCP-Verbindungen mit Anfragen belegt, kann sich der Browser vorerst ni
 
 Das ständige Mitsenden der Header führt zu langsameren Anfragen.
 
+<p class="fragment">Ein durchschnittlicher Header liegt bei 600 Bytes.</p>
+
 <p class="fragment">Der SPON Header mit samt Cookie kommt z.B. auf knapp 1 KB.</p>
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_mmrb6wlC0g1qz4rgp.gif" data-state="inverted" -->
@@ -258,16 +332,64 @@ Das ständige Mitsenden der Header führt zu langsameren Anfragen.
 <br><br><br><br>
 # Was tun wir bisher dagegen?
 ---
-# Anzahl Requests reduzieren!
+<!-- .slide: data-background="images/backgrounds/stock-photo-code-matrix-4021051.jpg" data-state="inverted faded" -->
 
-<ul>
-	<li class="fragment">JS & CSS Concatenieren</li>
-	<li class="fragment">Bitmap/SVG-Sprites erzeugen</li>
-	<li class="fragment">Icon-Fonts erstellen</li>
-	<li class="fragment">Ressourcen via Data-URIs inlinen</li>
-</ul>
+# Concatenieren
 
-<p class="fragment">Nachteil: Ändert sich ein Fragment aus diesen Datei-Sandwichs, muss alles neu übertragen werden.</p>
+```js
+grunt.initConfig({
+  concat: {
+    options: {
+      separator: ';',
+    },
+    dist: {
+      src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
+      dest: 'dist/built.js',
+    },
+  },
+});
+```
+---
+<!-- .slide: data-background="images/old_structure_resized.png" data-state="inverted faded" -->
+
+# Bitmap-Spriting
+
+```js
+grunt.initConfig({
+    sprite:{
+      all: {
+        src: 'path/to/your/sprites/*.png',
+        destImg: 'destination/of/spritesheet.png',
+        destCSS: 'destination/of/sprites.css'
+      }
+    }
+  });
+```
+---
+<!-- .slide: data-background="images/1351212646_ap_icons_white_social.png" data-state="inverted faded" -->
+
+# SVG-Spriting
+
+```html
+<svg viewBox="0 0 100 100">
+   <use xlink:href="defs.svg#icon-1"></use>
+</svg>
+```
+---
+<!-- .slide: data-background="images/icomoon.png" data-state="inverted faded" -->
+
+# Icon Fonts
+---
+<!-- .slide: data-background="images/datauri.png" data-state="inverted" -->
+
+# Ressourcen via Data-URIs inlinen
+<br><br><br><br>
+---
+<!-- .slide: data-background="images/huey_pushed_vietnam.jpg" data-state="inverted faded" -->
+
+# Nachteil:
+
+Ändert sich ein Fragment aus diesen Datei-Paketen, muss alles neu übertragen werden.
 ---
 # Ressourcen über mehrere Hosts verteilen
 
@@ -307,6 +429,20 @@ Headerdaten werden komprimiert.
 > Google observed an ~88% reduction in the size of request headers and an ~85% reduction in the size of response headers after enabling compression. This amounted to a saving of between 45 and 1142 ms in the overall page load time.
 
 [Quelle](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
+---
+# HTTP/2
+
+[Tests der University of Delaware](http://www.eecis.udel.edu/~amer/PEL/poc/pdf/SPDY-Fan.pdf):
+
+| Request headers | 1st         | 2nd        |
+|-----------------|-------------|------------|
+| HTTP Request    | 686.2       | 636.4      |
+| SPDY Request    | 379.4 (55%) | 68.6 (10%) |
+
+| Response headers | 1st         | 2nd        |
+|------------------|-------------|------------|
+| HTTP Response    | 444.6       | 418.7      |
+| SPDY Response    | 202.0 (45%) | 69.2 (17%) |
 ---
 # HTTP/2
 
@@ -423,7 +559,7 @@ Idle-Time:
 
 ![CPU Idle Times](images/spdy-linux-cpu-idle.png)
 
-[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/){.stretch}
 ---
 # Browsersupport Desktop
 

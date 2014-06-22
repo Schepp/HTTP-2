@@ -4,4 +4,7 @@
 * Twitter: [@derSchepp](https://twitter.com/derSchepp)
 * Podcast: [Working Draft](http://workingdraft.de)
 
-<span style="color:#663399">#663399Becca</span>
+---
+Bildherkünfte:
+
+* Deutschlandkarte: Portal der statistischen Ämter des Bundes und der Länder (DeStatis); David Liuzzo
