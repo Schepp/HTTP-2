@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.hostname = "serverpush.vagrant.vm"
+  config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 443, host: 44344
+  config.vm.synced_folder "", "/var/www"
+  config.vm.provision :shell, :path => "bootstrap.sh"
+end
