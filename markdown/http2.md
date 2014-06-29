@@ -510,6 +510,7 @@ Connection: Upgrade, HTTP2-Settings
 Upgrade: HTTP/2.0
 HTTP2-Settings: (SETTINGS payload in Base64)
 ```
+&nbsp;
 ```
 HTTP/1.1 200 OK 3
 Content-length: 243
