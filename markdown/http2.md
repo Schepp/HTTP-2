@@ -665,7 +665,7 @@ Es bringt uns keinerlei Vorteile mehr.
 
 <p class="fragment">(Aber so kommen wir nah an das Konzept von Delta-Updates heran)</p>
 ---
-# Handlungsanweisung
+# Server Push aktivieren
 
 Server Push für alle kritischen Ressourcen konfigurieren:
 
