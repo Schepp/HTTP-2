@@ -71,6 +71,10 @@ html.grayscaled .reveal .backgrounds {
   background: transparent;
   box-shadow: none;
 }
+.reveal video {
+  width: auto;
+  height: 80%;
+}
 .reveal .datatable + table {
   font-size: 0.5em;
   line-height: 1.4;

@@ -19,4 +19,4 @@ Bildherkünfte:
 * Hubschrauber: usmilitaryhelicopters.org
 * Planet Facebook or Planet Earth? - Paul Butler
 * Schnappschuss: Stefan Nitzsche
-* Animierte GIFs: devopsreactions.tumblr.com
+* Animierte GIFs: devopsreactions.tumblr.com & gifsoup.com

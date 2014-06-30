@@ -121,6 +121,7 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 
 <br><br><br><br>
 <br><br><br><br>
+<br>
 # Proxies sagen leider nein zu Pipelining.
 
 <p class="fragment">Schade.</p>
@@ -413,8 +414,9 @@ grunt.initConfig({
 # Enter HTTP/2, aka SPDY!
 ---
 # HTTP/2
+<!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
 
-Daten werden Binär codiert übertragen. Das ist effizienter und fehlertoleranter.
+Daten werden binär codiert übertragen. Das ist effizienter und fehlertoleranter.
 ---
 # HTTP/2
 
@@ -456,6 +458,11 @@ Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
 
 # HTTP/2 ist wie eine Stromschnelle
 ---
+# Der Vergleich
+
+<video data-autoplay class="stretch" loop src="images/mod_spdy%20World%20Flags%20Demo.mp4"></video>
+
+---
 ## Prioritized Streams
 
 HTTP/2 kann das Mischverhältnis der in seinen Datenstrom gewobenen Daten zu jeder Zeit verändern und an neue Gegebenheiten anpassen.
@@ -477,16 +484,12 @@ Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
 
 Ebenso kann der Server Ressoucen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
 
-<p class="fragment">Das nennt sich dann "Server Push" (oder auch "SPDY Push").</p>
----
-## SPDY Push
-
-<video data-autoplay class="stretch" loop src="images/server-push.mp4"></video>
-<!-- <iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe> -->
+<p class="fragment">Das nennt sich dann "Server Push".</p>
 ---
 ## Server Push
 
-[Noch eine Demo](https://www.modspdy.com/server-push/)
+<video data-autoplay class="stretch" loop src="images/server-push.mp4"></video>
+<!-- <iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe> -->
 ---
 # HTTP/2
 
@@ -581,9 +584,16 @@ Idle-Time:
 
 [Can I Use](http://caniuse.com/spdy)
 ---
+<!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
+
+# Deutschland: 72.77% Support
+---
+<!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
+# Wenn Safari 8 raus ist: 79.77%
+---
 # Serverseitige Unterstützung
 
-* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache
+* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache (ab 2.4 integriert)
 * [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html) für NGINX
 * [Eingebautes SPDY](http://wiki.eclipse.org/Jetty/Feature/SPDY) in Jetty (ab 7.6.2)
 * Eingebautes SPDY in OpenLiteSpeed (ab 1.2.7)
@@ -631,24 +641,27 @@ Spriting und Concatenieren absolut vermeiden!
 ---
 # Handlungsanweisung
 
-Im Server HTTP Push für alle kritischen Ressourcen konfigurieren.
+Server Push für alle kritischen Ressourcen konfigurieren:
 
 z.B. in Apache via Header-Directive:
 
 ```
-X-Associated-Content: "https://www.example.com/styles/foo.css",
-     "/scripts/bar.js?q=4":2,
-     "https://www.example.com/images/baz.png":5,
-     "https://www.example.com/generate_image.php?w=32&h=24"
-     ```
+X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
+```
 
 (Prio 0 = Hoch, Prio 7 = Niedrig)
+---
+<!-- .slide: data-background="images/reactions/tumblr_mnj888Jab71s6z99jo1_500.gif" data-state="inverted" -->
 
+<br><br><br><br>
+<br><br><br><br>
+<br><br>
+# Profit!
 ---
 # Zukunftsmusik
 
-* [HTTP/3](http://www.mnot.net/blog/2014/01/30/http2_expectations) mit weiteren Features wie z.B. DNS-Push.
-* [QUIC](http://blog.chromium.org/2013/06/experimenting-with-quic.html), das auf UDP aufsetzt, und von den Google Services schon heute genutzt wird.
+<p class="fragment">[HTTP/3](http://www.mnot.net/blog/2014/01/30/http2_expectations) mit weiteren Features wie z.B. DNS-Push.</p>
+<p class="fragment">[QUIC](http://blog.chromium.org/2013/06/experimenting-with-quic.html), das auf UDP statt TCP aufsetzt. Wird von den Google Services schon heute genutzt.</p>
 
 ---
 # Weiterführende Literatur
