@@ -23,6 +23,7 @@
 
   html.faded & .backgrounds {
 	opacity: 0.5;
+	background-blend-mode: multiply;
   }
   html.grayscaled & .backgrounds {
 	filter: greyscale(1);

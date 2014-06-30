@@ -28,6 +28,7 @@ html.inverted .reveal h1, html.inverted .reveal h2, html.inverted .reveal h3, ht
 }
 html.faded .reveal .backgrounds {
   opacity: 0.5;
+  background-blend-mode: multiply;
 }
 html.grayscaled .reveal .backgrounds {
   filter: greyscale(1);
