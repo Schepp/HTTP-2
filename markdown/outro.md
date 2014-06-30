@@ -20,6 +20,7 @@ Bildherkünfte:
 * Cables: Shutterstock - Eugene Sergeev
 * Deutschlandkarte: Portal der statistischen Ämter des Bundes und der Länder (DeStatis); David Liuzzo
 * Hubschrauber: usmilitaryhelicopters.org
+* Cloud Computing Concept: Shutterstock - olegganko
 * Planet Facebook or Planet Earth? - Paul Butler
 * Walt Disney Concert Hall - Graham@Flickr
 * Schnappschuss: Stefan Nitzsche

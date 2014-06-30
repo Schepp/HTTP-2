@@ -6,8 +6,8 @@ Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-tran
 Header set Pragma "no-cache"
 
 <Files push.html>
-#Header set X-Associated-Content: '"/images/34.png":0'
-Header set X-Associated-Content: '"/style.css","/images/00.png","/images/01.png","/images/02.png","/images/03.png","/images/04.png","/images/10.png","/images/11.png","/images/12.png","/images/13.png","/images/14.png","/images/20.png","/images/21.png","/images/22.png","/images/23.png","/images/24.png","/images/30.png","/images/31.png","/images/32.png","/images/33.png","/images/34.png"'
+Header set X-Associated-Content: '"/images/34.png":0'
+#Header set X-Associated-Content: '"/style.css":0,"/images/00.png":0,"/images/01.png":0,"/images/02.png":0,"/images/03.png":0,"/images/04.png":0,"/images/10.png":0,"/images/11.png":0,"/images/12.png":0,"/images/13.png":0,"/images/14.png":0,"/images/20.png":0,"/images/21.png":0,"/images/22.png":0,"/images/23.png":0,"/images/24.png":0,"/images/30.png":0,"/images/31.png":0,"/images/32.png":0,"/images/33.png":0,"/images/34.png":0'
 </Files>
 
 </IfModule>

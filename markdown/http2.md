@@ -394,13 +394,19 @@ grunt.initConfig({
 
 Ändert sich ein Fragment aus diesen Datei-Paketen, muss alles neu übertragen werden.
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
+
 # Desweiteren: Ressourcen über mehrere Hosts verteilen
+
+<p class="fragment">&quot;Domain Sharding&quot;</p>
 
 <ul>
 	<li class="fragment">Jeder Extra-Host ermöglicht 6 zusätzliche TCP-Verbindungen</li>
 	<li class="fragment">Cookie-Header werden nur noch an den Haupt-Host gesendet</li>
 </ul>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
+
 # Nachteile:
 
 Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
