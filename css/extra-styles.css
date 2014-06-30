@@ -19,7 +19,7 @@
 }
 html.inverted .reveal h1, html.inverted .reveal h2, html.inverted .reveal h3, html.inverted .reveal h4, html.inverted .reveal h5, html.inverted .reveal h6, html.inverted .reveal ol, html.inverted .reveal ul, html.inverted .reveal p, html.inverted .reveal table, html.inverted .reveal pre {
   color: #FFF;
-  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 8px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000, 0 0 16px #000;
+  text-shadow: 1px 1px 2px black, 1px -1px 2px black, -1px -1px 2px black, -1px 1px 2px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 8px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.5), 0 0 8px rgba(0, 0, 0, 0.5);
 }
 .reveal pre code {
   max-height: 700px;
@@ -31,6 +31,9 @@ html.faded .reveal .backgrounds {
 }
 html.grayscaled .reveal .backgrounds {
   filter: greyscale(1);
+}
+.reveal .right {
+  margin-left: 33%;
 }
 .reveal pre + pre {
   margin-top: -1em;
@@ -55,6 +58,9 @@ html.grayscaled .reveal .backgrounds {
   font-size: 1em;
   border-top: 1px solid currentcolor;
   border-bottom: 1px solid currentcolor;
+}
+.smaller .reveal table {
+  font-size: 0.8em;
 }
 .reveal table th, .reveal table td {
   padding: 0.1em 0.2em;

@@ -21,6 +21,9 @@ Bildherkünfte:
 * Deutschlandkarte: Portal der statistischen Ämter des Bundes und der Länder (DeStatis); David Liuzzo
 * Hubschrauber: usmilitaryhelicopters.org
 * Cloud Computing Concept: Shutterstock - olegganko
+* shiny space, futuristic wave: Shutterstock - majcot
+* Prism: Shutterstock - mejnak
+* Grass: Shutterstock - noppharat
 * Planet Facebook or Planet Earth? - Paul Butler
 * Walt Disney Concert Hall - Graham@Flickr
 * Schnappschuss: Stefan Nitzsche

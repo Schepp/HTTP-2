@@ -458,6 +458,8 @@ Headerdaten werden komprimiert.
 | HTTP Response    | 444.6       | 418.7      |
 | SPDY Response    | 202.0 (45%) | 69.2 (17%) |
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_200991887_B.jpg" data-state="inverted faded" -->
+
 # HTTP/2
 
 Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
@@ -466,21 +468,25 @@ Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
 
 <p class="fragment">Es handelt sich also um ein automatisches Spriting/Concatenieren auf Protokollebene!</p>
 ---
-<!-- .slide: data-background="images/backgrounds/stock-photo-water-falls-at-glen-park-williamsville-new-york-198098444.jpg" data-state="inverted" -->
-
-# HTTP/2 ist wie eine Stromschnelle
----
 # Der Vergleich
 
 <video data-autoplay class="stretch" loop src="images/mod_spdy%20World%20Flags%20Demo.mp4"></video>
 
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_199661090_b.jpg" data-state="inverted" -->
+
+<br><br><br><br>
+
 ## Prioritized Streams
 
 HTTP/2 kann das Mischverhältnis der in seinen Datenstrom gewobenen Daten zu jeder Zeit verändern und an neue Gegebenheiten anpassen.
 
 <p class="fragment">Auch kann die Übertragung einer angefangenen Datei komplett gestoppt und verworfen werden.</p>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_199661090_b.jpg" data-state="inverted" -->
+
+<br><br><br><br>
+
 ## Prioritized Streams
 
 Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
@@ -492,6 +498,10 @@ Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
 	<li class="fragment">Sehr niedrig: Bilder, Favicon</li>
 </ul>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_199661090_b.jpg" data-state="inverted" -->
+
+<br><br><br><br>
+
 ## Prioritized Streams
 
 Ebenso kann der Server Ressoucen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
@@ -500,9 +510,13 @@ Ebenso kann der Server Ressoucen, die er für relevant hält, mit höherer Prior
 ---
 ## Server Push
 
+Von 640 Bildfragmenten werden zuerst die des Schriftzugs Übertragen:
+
 <video data-autoplay class="stretch" loop src="images/server-push.mp4"></video>
 <!-- <iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe> -->
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_201625775_b.jpg" data-state="inverted faded" -->
+
 # HTTP/2
 
 ist bestandskompatibel und vollkommen transparent.
@@ -511,12 +525,12 @@ ist bestandskompatibel und vollkommen transparent.
 
 <p class="fragment">(um zu vermeiden, was mit HTTP-Pipelining passiert ist)</p>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_201625775_b.jpg" data-state="inverted faded" -->
+
 # HTTP/2
 
 Zudem wird die SSL-Handshake-Phase genutzt, um sich gegenseitig über HTTP/2-Fähigkeiten zu informieren.
 ---
-#HTTP/2
-
 Eine Aushandlung via unverschlüsseltem HTTP ist möglich:
 ```
 GET /page HTTP/1.1
@@ -525,14 +539,14 @@ Connection: Upgrade, HTTP2-Settings
 Upgrade: HTTP/2.0
 HTTP2-Settings: (SETTINGS payload in Base64)
 ```
-&nbsp;
+Gegenstelle kann kein HTTP/2:
 ```
 HTTP/1.1 200 OK 3
 Content-length: 243
 Content-type: text/html
 (... HTTP 1.1 response ...)
 ```
-oder
+Gegenstelle kann HTTP/2:
 ```
 HTTP/1.1 101 Switching Protocols 4
 Connection: Upgrade
@@ -547,11 +561,13 @@ Upgrade: HTTP/2.0
 
 [Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
+<!-- .slide: data-state="smaller" -->
+
 # Benchmark
 
 |                                                         | HTTP                                     | HTTPS                                    |SPDY                                     |
 |---------------------------------------------------------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| Maximum pages/s                                         | 16.3 @ 120 users                         | 15.9 @ 120 users                         | 98 @ 777 users                          |
+| Max. pages/s                                            | 16.3 @ 120 users                         | 15.9 @ 120 users                         | 98 @ 777 users                          |
 | Response @ 100 users                                    | 1.1s                                     | 1.3s                                     | 1.1s                                    |
 | Response @ 120 users                                    | 1.4 s                                    | 1.5s                                     | 1.1s                                    |
 | Response @ 200 users                                    | 7.1s                                     | 7.8s                                     | 1.1s                                    |
@@ -613,7 +629,7 @@ Idle-Time:
 ---
 <!-- .slide: data-background="images/backgrounds/5261568726_d51149d62c_b.jpg" data-state="inverted faded" -->
 
-# Seiten, die SPDY nutzen
+# Seiten, die HTTP/2 bzw. SPDY nutzen
 
 * Google
 * Facebook
@@ -627,13 +643,13 @@ Idle-Time:
 
 <br><br><br><br>
 <br><br><br><br>
-# Handlungsanweisung
-
-Jetzt anfangen, HTTP/2 bzw. SPDY zu nutzen!
+# Handlungsanweisungen
 ---
-# Handlungsanweisung
+# Jetzt anfangen, HTTP/2 zu nutzen!
+---
+# Domain-Sharding vermeiden!
 
-Domain-Sharding vermeiden! Es bringt uns keinerlei Vorteile mehr.
+Es bringt uns keinerlei Vorteile mehr.
 
 <p class="fragment">(stattdessen erzeugt es nur überflüssige DNS-Lookups)</p>
 
@@ -641,13 +657,11 @@ Domain-Sharding vermeiden! Es bringt uns keinerlei Vorteile mehr.
 
 <p class="fragment">Den Einsatz von CDNs neu abwägen.</p>
 ---
-# Handlungsanweisung
-
-Spriting und Concatenieren absolut vermeiden!
+# Spriting und Concatenieren absolut vermeiden!
 
 <p class="fragment">Stattdessen: Zusehen, ob man seine Dateien nicht automatisiert noch kleiner bekommt!</p>
 
-<p class="fragment">(krank, oder?)</p>
+<p class="fragment">(verrückt, oder?)</p>
 
 <p class="fragment">(Aber so kommen wir nah an das Konzept von Delta-Updates heran)</p>
 ---
