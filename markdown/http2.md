@@ -326,6 +326,8 @@ Das ständige Mitsenden der Header führt zu langsameren Anfragen.
 <p class="fragment">Ein durchschnittlicher Header liegt bei 600 Bytes.</p>
 
 <p class="fragment">Der SPON Header mit samt Cookie kommt z.B. auf knapp 1 KB.</p>
+
+<p class="fragment">Übertragungszeit bei einem 1 MBit/s Upstream: 10 ms pro Request.</p>
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_mmrb6wlC0g1qz4rgp.gif" data-state="inverted" -->
 
@@ -379,7 +381,7 @@ grunt.initConfig({
 ---
 <!-- .slide: data-background="images/icomoon.png" data-state="inverted faded" -->
 
-# Icon Fonts
+# Icon Fonts verwenden
 ---
 <!-- .slide: data-background="images/datauri.png" data-state="inverted" -->
 
@@ -392,14 +394,18 @@ grunt.initConfig({
 
 Ändert sich ein Fragment aus diesen Datei-Paketen, muss alles neu übertragen werden.
 ---
-# Ressourcen über mehrere Hosts verteilen
+# Desweiteren: Ressourcen über mehrere Hosts verteilen
 
 <ul>
 	<li class="fragment">Jeder Extra-Host ermöglicht 6 zusätzliche TCP-Verbindungen</li>
 	<li class="fragment">Cookie-Header werden nur noch an den Haupt-Host gesendet</li>
 </ul>
+---
+# Nachteile:
 
-<p class="fragment">Nachteil: Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden. Ab 4 Hosts dreht sich der Vorteil um.</p>
+Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
+<p class="fragment">Jeder zusätzliche Host muss durch die TCP Slow Start Phase.</p>
+<p class="fragment">Ab 4 Hosts dreht sich der Vorteil ins Negative um.</p>
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_n1h1w9xP6K1raprkq.gif" data-state="inverted" -->
 
@@ -658,6 +664,8 @@ X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
 <br><br>
 # Profit!
 ---
+<!-- .slide: data-background="images/backgrounds/5114726812_4f9cf2851d_b.jpg" data-state="inverted faded" -->
+
 # Zukunftsmusik
 
 <p class="fragment">[HTTP/3](http://www.mnot.net/blog/2014/01/30/http2_expectations) mit weiteren Features wie z.B. DNS-Push.</p>
