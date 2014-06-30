@@ -8,25 +8,27 @@
 * Podcast: [Working Draft](http://workingdraft.de)
 
 ---
-Bildherkünfte:
+## Bildnachweise
 
-<small>
+<ul class="multicolumn">
 
-* Sonnenuntergang: Shutterstock - Natalia Dobryanskaya
-* Soviet: Shutterstock -  Triff
-* Tim Berners Lee: Wikipedia
-* Code Matrix: Shutterstock - Sebastian Kaulitzki
-* Frau mit Laptop: Shutterstock - Voyagerix
-* Cables: Shutterstock - Eugene Sergeev
-* Deutschlandkarte: Portal der statistischen Ämter des Bundes und der Länder (DeStatis); David Liuzzo
-* Hubschrauber: usmilitaryhelicopters.org
-* Cloud Computing Concept: Shutterstock - olegganko
-* shiny space, futuristic wave: Shutterstock - majcot
-* Prism: Shutterstock - mejnak
-* Grass: Shutterstock - noppharat
-* Planet Facebook or Planet Earth? - Paul Butler
-* Walt Disney Concert Hall - Graham@Flickr
-* Schnappschuss: Stefan Nitzsche
-* Animierte GIFs: devopsreactions.tumblr.com & gifsoup.com
+<li>Golden abstract science fiction: Shutterstock - pixelparticle
+<li>Sonnenuntergang: Shutterstock - Natalia Dobryanskaya
+<li>Soviet: Shutterstock -  Triff
+<li>Tim Berners Lee: Wikipedia
+<li>Code Matrix: Shutterstock - Sebastian Kaulitzki
+<li>Frau mit Laptop: Shutterstock - Voyagerix
+<li>Cables: Shutterstock - Eugene Sergeev
+<li>Deutschlandkarte: DeStatis, David Liuzzo
+<li>Hubschrauber: usmilitaryhelicopters.org
+<li>Cloud Computing Concept: Shutterstock - olegganko
+<li>shiny space, futuristic wave: Shutterstock - majcot
+<li>Prism: Shutterstock - mejnak
+<li>Grass: Shutterstock - noppharat
+<li>Engine start stop button: Shutterstock - Peter Gudella
+<li>Planet Facebook or Planet Earth? - Paul Butler
+<li>Walt Disney Concert Hall - Graham@Flickr
+<li>Schnappschuss: Stefan Nitzsche
+<li>Animierte GIFs: devopsreactions.tumblr.com & gifsoup.com
 
-</small>
+</ul>

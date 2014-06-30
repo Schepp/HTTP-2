@@ -645,8 +645,15 @@ Idle-Time:
 <br><br><br><br>
 # Handlungsanweisungen
 ---
-# Jetzt anfangen, HTTP/2 zu nutzen!
+<!-- .slide: data-background="images/backgrounds/shutterstock_156956813_b.jpg" data-state="inverted faded" -->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+# Ab jetzt HTTP/2 nutzen!
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
+
 # Domain-Sharding vermeiden!
 
 Es bringt uns keinerlei Vorteile mehr.
@@ -657,6 +664,8 @@ Es bringt uns keinerlei Vorteile mehr.
 
 <p class="fragment">Den Einsatz von CDNs neu abwägen.</p>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_4021051.jpg" data-state="inverted faded" -->
+
 # Spriting und Concatenieren absolut vermeiden!
 
 <p class="fragment">Stattdessen: Zusehen, ob man seine Dateien nicht automatisiert noch kleiner bekommt!</p>

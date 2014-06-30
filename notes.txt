@@ -1,0 +1,3 @@
+- Hybrid mode
+- Hybrid mode in combination with mod_pagespeed
+- Server Push Caching Impendancies

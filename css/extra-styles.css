@@ -1,4 +1,8 @@
 @charset "CP850";
+body {
+  background: linear-gradient(to bottom, #111111, #333333);
+}
+
 .reveal {
   font-size: 60px;
 }
@@ -25,6 +29,7 @@ html.inverted .reveal h1, html.inverted .reveal h2, html.inverted .reveal h3, ht
   max-height: 700px;
   filter: none;
   text-shadow: none;
+  box-shadow: inset 0 0 0 2px #666666, 0 0 4px 1px rgba(0, 0, 0, 0.5);
 }
 html.faded .reveal .backgrounds {
   opacity: 0.5;
@@ -121,4 +126,12 @@ html.grayscaled .reveal .backgrounds {
   left: 102%;
   content: close-quote;
   vertical-align: bottom;
+}
+.reveal .multicolumn {
+  font-size: 0.6em;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -ms-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
 }
