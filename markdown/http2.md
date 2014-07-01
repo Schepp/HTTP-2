@@ -319,6 +319,8 @@ Browser machen nur 6 parallele TCP-Verbindungen auf.
 Requests müssen in Reihe abgearbeitet werden.
 
 Pipelining würde da helfen.
+
+<p class="fragment">Auch ein Problem: Das &quot;First in Line Blocking&quot;<p>
 ---
 # Kein Abbruchmechanismus
 
