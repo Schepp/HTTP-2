@@ -206,6 +206,13 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 
 HTTP Requests: von 74 auf 96
 ---
+<!-- .slide: data-background="images/ecommerce-loadingtime.png" data-state="inverted" -->
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br>
+[Quelle](http://blog.radware.com/applicationdelivery/applicationaccelerationoptimization/2014/04/report-state-of-the-union-for-ecommerce-web-performance-spring-2014/)
+---
 <!-- .slide: data-background="images/backgrounds/shutterstock_195671744.jpg" data-state="inverted" -->
 
 # Breitband to the Rescue?
