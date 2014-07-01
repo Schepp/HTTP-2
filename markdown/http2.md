@@ -469,6 +469,8 @@ Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
 <p class="fragment">Es handelt sich also um ein automatisches Spriting/Concatenieren auf Protokollebene!</p>
 ---
 <!-- .slide: data-background="images/HTTP-1.0-vs-SPDY.png" data-state="inverted" -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+[Quelle](http://de.slideshare.net/AndyDavies/are-todays-good-practices-tomorrows-performance-antipatterns-28286548#)
 ---
 # Der Vergleich
 
@@ -695,6 +697,20 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 # HTTP Strict Transport Security!
 
 > The HTTP Strict Transport Security feature lets a web site inform the browser that it should never load the site using HTTP, and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead.
+---
+# HTTP Strict Transport Security
+
+```
+Strict-Transport-Security: max-age=expireTime [; includeSubdomains]
+```
+---
+![HSTS Hybrid](images/HSTS-Hybrid_a.png)
+---
+![HSTS Hybrid](images/HSTS-Hybrid_b.png)
+---
+# HTTP Strict Transport Security
+
+> The Strict-Transport-Security header is ignored by the browser when your site is accessed using HTTP
 ---
 # Apaches mod_pagespeed
 
