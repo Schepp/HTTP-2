@@ -673,7 +673,7 @@ Es bringt uns keinerlei Vorteile mehr.
 
 <p class="fragment">Außerdem: Ein einzelner Host kann die Ressourcen-Priorisierung besser verwalten.</p>
 
-<p class="fragment">Den Einsatz von CDNs neu abwägen.</p>
+<p class="fragment">[Den Einsatz von CDNs neu abwägen](https://thethemefoundry.com/blog/why-we-dont-use-a-cdn-spdy-ssl/).</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_4021051.jpg" data-state="inverted faded" -->
 
@@ -697,27 +697,11 @@ X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
 
 (Prio 0 = Hoch, Prio 7 = Niedrig)
 ---
-# Hybridmodus
+<!-- .slide: data-background="images/backgrounds/xp.jpg" data-state="inverted faded" -->
+
+# Legacy Browser?
 
 Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
----
-# HTTP Strict Transport Security!
-
-> The HTTP Strict Transport Security feature lets a web site inform the browser that it should never load the site using HTTP, and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead.
----
-# HTTP Strict Transport Security
-
-```
-Strict-Transport-Security: max-age=expireTime [; includeSubdomains]
-```
----
-![HSTS Hybrid](images/HSTS-Hybrid_a.png)
----
-![HSTS Hybrid](images/HSTS-Hybrid_b.png)
----
-# HTTP Strict Transport Security
-
-> The Strict-Transport-Security header is ignored by the browser when your site is accessed using HTTP
 ---
 # Apaches mod_pagespeed
 
@@ -732,6 +716,7 @@ Strict-Transport-Security: max-age=expireTime [; includeSubdomains]
   ModPagespeedShardDomain www.site.com s1.site.com,s2.site.com
 </ModPagespeedIf>
 ```
+---
 <!-- .slide: data-background="images/reactions/tumblr_mnj888Jab71s6z99jo1_500.gif" data-state="inverted" -->
 
 <br><br><br><br>
