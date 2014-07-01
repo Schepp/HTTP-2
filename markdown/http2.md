@@ -468,6 +468,8 @@ Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
 
 <p class="fragment">Es handelt sich also um ein automatisches Spriting/Concatenieren auf Protokollebene!</p>
 ---
+<!-- .slide: data-background="images/HTTP-1.0-vs-SPDY.png" data-state="inverted" -->
+---
 # Der Vergleich
 
 <video data-autoplay class="stretch" loop src="images/mod_spdy%20World%20Flags%20Demo.mp4"></video>
@@ -686,6 +688,27 @@ X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
 
 (Prio 0 = Hoch, Prio 7 = Niedrig)
 ---
+# Hybridmodus
+
+Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
+---
+# HTTP Strict Transport Security!
+
+> The HTTP Strict Transport Security feature lets a web site inform the browser that it should never load the site using HTTP, and should automatically convert all attempts to access the site using HTTP to HTTPS requests instead.
+---
+# Apaches mod_pagespeed
+
+```
+# Disable concatenation for SPDY/HTTP 2.0 clients
+<ModPagespeedIf spdy>
+  ModPagespeedDisableFilters combine_css,combine_javascript
+</ModPagespeedIf>
+
+# Shard assets for HTTP 1.x clients only
+<ModPagespeedIf !spdy>
+  ModPagespeedShardDomain www.site.com s1.site.com,s2.site.com
+</ModPagespeedIf>
+```
 <!-- .slide: data-background="images/reactions/tumblr_mnj888Jab71s6z99jo1_500.gif" data-state="inverted" -->
 
 <br><br><br><br>
