@@ -34,7 +34,7 @@ Je eine kurzlebige TCP-Verbindung pro HTTP-Abfrage/Antwort-Pärchen
 ---
 # HTTP/1.0
 
-Daten werden ASCII Codiert übertragen
+Daten werden ASCII codiert übertragen
 
 ![HTTP-Request](images/HTTP-Request.png)
 ---
@@ -198,7 +198,7 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 
 <br><br><br><br>
 <br><br><br><br>
-# 125 Requests? WTF-Copter!
+# 172 Requests? WTF-Copter!
 ---
 # 1995 - heute
 
