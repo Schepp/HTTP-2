@@ -437,7 +437,20 @@ Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
 # HTTP/2
 <!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
 
-Daten werden binär codiert übertragen. Das ist effizienter und fehlertoleranter.
+Daten werden binär codiert übertragen.
+
+<ul>
+	<li class="fragment">Effizienter zu parsen</li>
+	<li class="fragment">Kompakter</li>
+	<li class="fragment">Weniger fehleranfällig</li>
+</ul>
+---
+# HTTP/2
+<!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
+
+> textual protocols like HTTP/1.x [...] often have a number of affordances to “help” with things like whitespace handling, capitalisation, line endings, blank links and so on.
+
+[Quelle](http://http2.github.io/faq/#why-is-http2-binary)
 ---
 # HTTP/2
 
@@ -619,7 +632,7 @@ Idle-Time:
 ---
 # Browsersupport Mobile
 
-| ![Chrome](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
+| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 3+ | 33+ | 8+ | 24+ | 11+ (WP8.1) |
 
@@ -627,14 +640,15 @@ Idle-Time:
 ---
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
 
-# Deutschland: 72.77% Support
+# Weltweit: 78.52% Support
 ---
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
-# Wenn Safari 8 raus ist: 79.77%
+
+# Deutschland: 89.40% Support
 ---
 # Serverseitige Unterstützung
 
-* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache (ab 2.4 integriert)
+* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache (bald in 2.4.NEXT integriert)
 * [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html) für NGINX
 * [Eingebautes SPDY](http://wiki.eclipse.org/Jetty/Feature/SPDY) in Jetty (ab 7.6.2)
 * Eingebautes SPDY in OpenLiteSpeed (ab 1.2.7)
@@ -645,10 +659,12 @@ Idle-Time:
 # Seiten, die HTTP/2 bzw. SPDY nutzen
 
 * Google
+* Yahoo
 * Facebook
 * Twitter
 * WordPress.com
 * Cloudflare CDN
+* MaxCDN
 * Synology
 
 ---
@@ -736,6 +752,7 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 ---
 # Weiterführende Literatur
 
+* [HTTP/2 Frequently Asked Questions](http://http2.github.io/faq/)
 * [High Performance Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_UPGRADE)
 * [Making The Web Faster With SPDY](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
 * [SPDYCheck.org](http://spdycheck.org/)
