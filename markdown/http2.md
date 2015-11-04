@@ -783,14 +783,6 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 <br><br>
 # Profit!
 ---
-<!-- .slide: data-background="images/backgrounds/5114726812_4f9cf2851d_b.jpg" data-state="inverted faded" -->
-
-# Zukunftsmusik
-
-<p class="fragment">[HTTP/3](http://www.mnot.net/blog/2014/01/30/http2_expectations) mit weiteren Features wie z.B. DNS-Push.</p>
-<p class="fragment">[QUIC](http://blog.chromium.org/2013/06/experimenting-with-quic.html), das auf UDP statt TCP aufsetzt. Wird von den Google Services schon heute genutzt.</p>
-
----
 # Weiterführende Literatur
 
 * [HTTP/2 Frequently Asked Questions](http://http2.github.io/faq/)
