@@ -186,7 +186,7 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 ---
 <!-- .slide: data-background="images/backgrounds/website-2014.png" data-state="inverted" -->
 
-# Webseite 2014
+# Webseite heute
 ---
 <!-- .slide: data-background="images/backgrounds/website-2014.png" data-state="inverted faded" -->
 
@@ -530,7 +530,7 @@ Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
 
 ## Prioritized Streams
 
-Ebenso kann der Server Ressoucen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
+Ebenso kann der Server Ressourcen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
 
 <p class="fragment">Das nennt sich dann "Server Push".</p>
 ---
@@ -581,15 +581,25 @@ Upgrade: HTTP/2.0
 ```
 <p class="fragment">(Anwendungsszenario: Server-zu-Server-Kommunikation)</p>
 ---
+<!-- .slide: data-background="images/backgrounds/shutterstock_334616300.jpg" data-state="inverted faded" -->
+
 # Serverseitige Vorteile
 
 > SPDY clients consume one Apache worker instead of six
 
 [Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
-<!-- .slide: data-state="smaller" -->
+<!-- .slide: data-background="images/backgrounds/shutterstock_334616300.jpg" data-state="inverted faded" -->
 
 # Benchmark
+
+> Ramp-up from 1 to 1000 users for 20 minutes.<br>1 page call, wait for 5s, restart.
+
+[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+<!-- .slide: data-state="smaller" -->
+
+# Ergebnisse
 
 |                                                         | HTTP                                     | HTTPS                                    |SPDY                                     |
 |---------------------------------------------------------|------------------------------------------|------------------------------------------|-----------------------------------------|
@@ -600,7 +610,6 @@ Upgrade: HTTP/2.0
 | Response @ 777 users                                    | 70.2s                                    | 72s                                      | 2.7s                                    |
 | First error                                             | 405 Users                                | 225 Users                                | 884 Users                               |
 
-[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
 # Speicherverbrauch
 
@@ -610,48 +619,79 @@ Upgrade: HTTP/2.0
 | HTTPS         | 3,500 MB | 3,579 MB | 79 MB                        |
 | SPDY          | 3,607 MB | 3,631 MB | 24 MB                        |
 
-[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
-# CPU-Auslastung
-
-Idle-Time:
+# CPU Idle-Time
 
 ![CPU Idle Times](images/spdy-linux-cpu-idle.png)
 
-[Quelle](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/){.stretch}
----
-# Browsersupport Desktop
+(weniger ist besser)
 
-| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10004; | 8+ | &#10004; | 11+* |
+---
+#  SPDY Support Desktop
+
+| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| &#10004; | 8+ | &#10004; | 11+* | &#10008;
 
 *= nur IE11 auf Windows 8+
 
 [Can I Use](http://caniuse.com/spdy)
 ---
-# Browsersupport Mobile
+# SPDY Support Mobile
 
 | ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 3+ | 33+ | 8+ | 24+ | 11+ (WP8.1) |
+| 3+ | &#10004; | 8+ | &#10004; | 11+ (WP8.1) |
 
 [Can I Use](http://caniuse.com/spdy)
 ---
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
 
-# Weltweit: 78.52% Support
+# Weltweit: 
+# 79.33% SPDY Support
 ---
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
 
-# Deutschland: 89.40% Support
+# Deutschland: 
+# 92.07% SPDY Support
+---
+#  HTTP/2 Support Desktop
+
+| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| &#10004; | 9+ | &#10004; | 11* | &#10004;
+
+*= nur IE11 auf Windows 10
+
+[Can I Use](http://caniuse.com/http2)
+---
+# HTTP/2 Support Mobile
+
+| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| &#10008; | &#10004; | 9.1+ | &#10004; | 11+ (WP8.1) |
+
+[Can I Use](http://caniuse.com/http2)
+---
+<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
+
+# Weltweit: 
+# 67.89% HTTP/2 Support
+---
+<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
+
+# Deutschland: 
+# 81.87% HTTP/2 Support
 ---
 # Serverseitige Unterstützung
 
-* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache (bald in 2.4.NEXT integriert)
+* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache
+* [mod_h2](https://github.com/icing/mod_h2) für Apache (ab 2.4.17 integriert)
 * [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html) für NGINX
+* HTTP/2 in NGINX Plus R7 integriert
 * [Eingebautes SPDY](http://wiki.eclipse.org/Jetty/Feature/SPDY) in Jetty (ab 7.6.2)
-* Eingebautes SPDY in OpenLiteSpeed (ab 1.2.7)
+* SPDY in OpenLiteSpeed integriert (ab 1.2.7)
+* HTTP/2 in IIS auf Windows 10 und Windows Server 2016 integriert
 
 ---
 <!-- .slide: data-background="images/backgrounds/5261568726_d51149d62c_b.jpg" data-state="inverted faded" -->
@@ -678,8 +718,9 @@ Idle-Time:
 
 <br><br><br><br>
 <br><br><br><br>
-<br><br><br><br>
+<br><br><br>
 # Ab jetzt HTTP/2 nutzen!
+<p class="fragment">(ggf. erst mit SPDY einsteigen, später auf HTTP/2 umstellen)</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
 

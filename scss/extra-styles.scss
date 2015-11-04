@@ -47,6 +47,11 @@ body {
 		background: transparent;
 		box-shadow: none;
 		filter: drop-shadow(0 0 1px #CCC) drop-shadow(0 0 10px #FFF);
+
+	  &[alt="PHP.RUHR 2015"] {
+		filter: drop-shadow(0 0 10px #000);
+		opacity: 0.75;
+	  }
 	}
 
 	li {
@@ -109,10 +114,11 @@ body {
 		quotes: "“" "”" "‘" "’";
 		position: relative;
 		margin-bottom: 1rem;
-		padding: 1rem;
+		padding: 1rem 1.5rem;
 		background-color: rgba(0,0,0,.9);
 		font-style: italic;
 		text-align: left;
+		box-shadow: 0 0 4px rgba(255,255,255,.5);
 
 		> *:last-child {
 			margin-bottom: 0;

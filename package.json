@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "grunt": "~0.4.1",
     "bower": "~1.2.8",
+    "grunt": "~0.4.1",
+    "grunt-autoprefixer": "^3.0.3",
     "grunt-contrib-sass": "~0.7.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-autoprefixer": "~0.6.5"
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

@@ -17,10 +17,10 @@ module.exports = function(grunt) {
         },
         autoprefixer: {
             options: {
-                browsers: ['last 2 version']
+                browsers: [ 'last 2 version', 'ie >= 10', 'Safari >= 7', 'iOS >= 7' ]
             },
             no_dest: {
-                src: 'css/extra-style.css'
+                src: 'css/extra-styles.css'
             }
         },
         watch: {
