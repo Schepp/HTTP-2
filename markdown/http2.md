@@ -1,3 +1,13 @@
+<!-- .slide: data-background="images/backgrounds/shutterstock_150137660.jpg" data-state="inverted" -->
+
+![PHP.RUHR 2015](images/phpruhr_logo_2015.png)
+
+# HTTP/2
+
+Die Zukunft beginnt jetzt.
+
+<br><br><br>
+---
 <!-- .slide: data-background="images/backgrounds/shutterstock_197424404.jpg" data-state="inverted" -->
 
 Wir schreiben das Jahr...
@@ -434,6 +444,9 @@ Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
 <br><br><br><br>
 # Enter HTTP/2, aka SPDY!
 ---
+<!-- .slide: data-background="images/backgrounds/timeline.jpg" data-state="inverted" -->
+
+---
 # HTTP/2
 <!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
 
@@ -790,3 +803,38 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 * [Making The Web Faster With SPDY](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
 * [SPDYCheck.org](http://spdycheck.org/)
 * [Evaluating the Performance of SPDY-enabled Web Servers](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
+---
+<!-- .slide: data-background="images/backgrounds/8207553734_1cacc702f3_o.jpg" data-state="inverted faded" -->
+
+<br><br><br><br><br><br>
+## Danke!
+
+* Slides: [http://schepp.github.io/HTTP-2](http://schepp.github.io/HTTP-2)
+* Twitter: [@derSchepp](https://twitter.com/derSchepp)
+* Podcast: [Working Draft](http://workingdraft.de)
+
+---
+## Bildnachweise
+
+<ul class="multicolumn">
+
+<li>Golden abstract science fiction: Shutterstock - pixelparticle
+<li>Sonnenuntergang: Shutterstock - Natalia Dobryanskaya
+<li>Soviet: Shutterstock -  Triff
+<li>Tim Berners Lee: Wikipedia
+<li>Code Matrix: Shutterstock - Sebastian Kaulitzki
+<li>Frau mit Laptop: Shutterstock - Voyagerix
+<li>Cables: Shutterstock - Eugene Sergeev
+<li>Deutschlandkarte: DeStatis, David Liuzzo
+<li>Hubschrauber: usmilitaryhelicopters.org
+<li>Cloud Computing Concept: Shutterstock - olegganko
+<li>shiny space, futuristic wave: Shutterstock - majcot
+<li>Prism: Shutterstock - mejnak
+<li>Grass: Shutterstock - noppharat
+<li>Engine start stop button: Shutterstock - Peter Gudella
+<li>Planet Facebook or Planet Earth? - Paul Butler
+<li>Walt Disney Concert Hall - Graham@Flickr
+<li>Schnappschuss: Stefan Nitzsche
+<li>Animierte GIFs: devopsreactions.tumblr.com & gifsoup.com
+
+</ul>
