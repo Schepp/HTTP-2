@@ -51,6 +51,9 @@ html.grayscaled .reveal .backgrounds {
   border: none;
   background: transparent;
   box-shadow: none;
+}
+.reveal section img[src$=".jpg"],
+.reveal section video[src$=".jpg"] {
   -webkit-filter: drop-shadow(0 0 1px #cccccc) drop-shadow(0 0 10px white);
           filter: drop-shadow(0 0 1px #cccccc) drop-shadow(0 0 10px white);
 }

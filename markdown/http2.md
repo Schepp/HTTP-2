@@ -140,11 +140,11 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 
 | System  |                                   |
 |---------|-----------------------------------|
-| IE8     | NEIN                              |
+| IE      | NEIN                              |
 | Chrome  | JA, aber abgeschaltet             |
 | Firefox | JA, aber abgeschaltet             |
 | Server  | JA                                |
-| Proxy   | NEIN                              |
+| Proxies | NEIN                              |
 
 [Quelle](https://libosong.appspot.com/spdy/index.html#17)
 ---
@@ -283,7 +283,7 @@ Zeitverlust abhängig von Servergeschwindigkeit
 
 | Abschnitt        | Zeitverlust |
 |------------------|-------------|
-| Latenz           | 90 ms       |
+| Entfernungslatenz | 90 ms       |
 | Übertragungszeit | 135 ms      |
 | Wartezeit Server | 45 ms       |
 | **Gesamtzeit**   | **270 ms**  |
@@ -300,10 +300,19 @@ Zeitverlust abhängig von Servergeschwindigkeit
 
 | Abschnitt        | 1x Bandbreite | 3x Bandbreite |
 |------------------|---------------|---------------|
-| Latenz           | 90 ms         | 90 ms         |
+| Entfernungslatenz | 90 ms         | 90 ms         |
 | Übertragungszeit | <span style="color: #FF6666">135 ms</span>        | <span style="color: #66FF99">45 ms</span>         |
 | Wartezeit Server | 45 ms         | 45 ms         |
 | Gesamtzeit       | <span style="color: #FF6666">270 ms</span>        | <span style="color: #66FF99">180 ms</span>         |
+
+---
+
+| Abschnitt        | 1x Bandbreite | 10x Bandbreite |
+|------------------|---------------|---------------|
+| Entfernungslatenz | 90 ms         | 90 ms         |
+| Übertragungszeit | <span style="color: #FF6666">135 ms</span>        | <span style="color: #66FF99">13 ms</span>         |
+| Wartezeit Server | 45 ms         | 45 ms         |
+| Gesamtzeit       | <span style="color: #FF6666">270 ms</span>        | <span style="color: #66FF99">148 ms</span>         |
 
 ---
 

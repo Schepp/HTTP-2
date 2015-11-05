@@ -46,7 +46,10 @@ body {
 		border: none;
 		background: transparent;
 		box-shadow: none;
+
+	  &[src$=".jpg"] {
 		filter: drop-shadow(0 0 1px #CCC) drop-shadow(0 0 10px #FFF);
+	  }
 
 	  &[alt="PHP.RUHR 2015"] {
 		filter: drop-shadow(0 0 10px #000);
