@@ -4,7 +4,6 @@
 
 Die Zukunft beginnt jetzt.
 
-<br><br><br>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_197424404.jpg" data-state="inverted" -->
 
