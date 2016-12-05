@@ -211,7 +211,7 @@ Durch Pipelining werden Latenzen zwischen den Requests einer TCP-Verbindung nich
 
 ![HTTP Archive Trends](images/HTTP-Archive-Trends-Total-Size.png)
 
-HTTP Requests: von 74 auf 96
+HTTP Requests: von 3 auf 96
 ---
 <!-- .slide: data-background="images/ecommerce-loadingtime.png" data-state="inverted" -->
 
@@ -371,8 +371,8 @@ grunt.initConfig({
       separator: ';',
     },
     dist: {
-      src: ['src/intro.js', 'src/project.js', 'src/outro.js'],
-      dest: 'dist/built.js',
+      src: ['src/a.js', 'src/b.js', 'src/c.js'],
+      dest: 'dist/scripts.js',
     },
   },
 });
@@ -448,10 +448,17 @@ Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
 
 <br><br><br><br>
 <br><br><br><br>
-# Enter HTTP/2, aka SPDY!
+# Enter HTTP/2!
 ---
 <!-- .slide: data-background="images/backgrounds/timeline.jpg" data-state="inverted" -->
+<br><br>
 
+# HTTP/2 &asymp; SPDY
+
+<br><br><br><br>
+<br><br><br><br>
+
+(siehe auch: [Genesis](https://en.wikipedia.org/wiki/HTTP/2#Genesis_in_and_later_differences_from_SPDY))
 ---
 # HTTP/2
 <!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
@@ -646,84 +653,69 @@ Upgrade: HTTP/2.0
 (weniger ist besser)
 
 ---
-#  SPDY Support Desktop
-
-| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10004; | 8+ | &#10004; | 11+* | &#10008;
-
-*= nur IE11 auf Windows 8+
-
-[Can I Use](http://caniuse.com/spdy)
----
-# SPDY Support Mobile
-
-| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| 3+ | &#10004; | 8+ | &#10004; | 11+ (WP8.1) |
-
-[Can I Use](http://caniuse.com/spdy)
----
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
 
 # Weltweit: 
-# 79.33% SPDY Support
+# 78.33% HTTP/2 Support
 ---
 <!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
 
 # Deutschland: 
-# 92.07% SPDY Support
+# 91.24% HTTP/2 Support
 ---
 #  HTTP/2 Support Desktop
 
 | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10004; | 9+ | &#10004; | 11* | &#10004;
+| &#10004; | 9+* | &#10004; | 11+** | &#10004;
 
-*= nur IE11 auf Windows 10
+*= ab OSX 10.11+<br>
+**= nur IE 11 auf Windows 10+, auf Windows 8 nur SPDY
 
-[Can I Use](http://caniuse.com/http2)
+[Can I Use](http://caniuse.com/#feat=http2)
 ---
 # HTTP/2 Support Mobile
 
-| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10008; | &#10004; | 9.1+ | &#10004; | 11+ (WP8.1) |
+| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| &#10008;* | &#10004; | 9,2+ | &#10004; | &#10008;** | &#10004; |
 
-[Can I Use](http://caniuse.com/http2)
----
-<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
+*= Wird gerade durch Chrome (Views) ersetzt<br>
+**= IE 11 auf Windows Mobile 8.1 kann SPDY
 
-# Weltweit: 
-# 67.89% HTTP/2 Support
----
-<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
-
-# Deutschland: 
-# 81.87% HTTP/2 Support
+[Can I Use](http://caniuse.com/#feat=http2)
 ---
 # Serverseitige Unterstützung
 
-* [mod_spdy](https://developers.google.com/speed/spdy/mod_spdy/) für Apache
-* [mod_h2](https://github.com/icing/mod_h2) für Apache (ab 2.4.17 integriert)
-* [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html) für NGINX
-* HTTP/2 in NGINX Plus R7 integriert
-* [Eingebautes SPDY](http://wiki.eclipse.org/Jetty/Feature/SPDY) in Jetty (ab 7.6.2)
-* SPDY in OpenLiteSpeed integriert (ab 1.2.7)
-* HTTP/2 in IIS auf Windows 10 und Windows Server 2016 integriert
+* Apache HTTP Server 2.4.17+ (ansonsten: [mod_h2](https://github.com/icing/mod_h2))
+* Apache Tomcat 8.5+
+* NGINX 1.9.5+
+* IIS auf Windows 10 und Windows Server 2016
+* Node.js 5.0+
+* Jetty 9.3+
+* und noch viele mehr&hellip;
 
+[HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementations) und [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
+---
+# Unterstützung seitens CDNs
+
+* Akamai (sogar mit Server Push!)
+* CloudFlare
+* Amazon CloudFront
+* Fastly (mit Server Push!)
+* und noch ein paar mehr.
+
+[Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
 ---
 <!-- .slide: data-background="images/backgrounds/5261568726_d51149d62c_b.jpg" data-state="inverted faded" -->
 
-# Seiten, die HTTP/2 bzw. SPDY nutzen
+# Firmen und Webseiten, die HTTP/2 nutzen
 
 * Google
 * Yahoo
 * Facebook
 * Twitter
 * WordPress.com
-* Cloudflare CDN
-* MaxCDN
 * Synology
 
 ---
@@ -739,7 +731,8 @@ Upgrade: HTTP/2.0
 <br><br><br><br>
 <br><br><br>
 # Ab jetzt HTTP/2 nutzen!
-<p class="fragment">(ggf. erst mit SPDY einsteigen, später auf HTTP/2 umstellen)</p>
+
+<p class="fragment">(Notfalls via [zwischengeschaltetem HTTP/2-fähigem Load-Balancer](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih0sauv9rQAhUFEywKHYS3DTAQFggaMAA&url=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fhigh-performance-browser%2F9781449344757%2Fch13.html&usg=AFQjCNGJiVCDdoF0iAC2ch9b66idBsmcuA&sig2=_nJIXeYIw0Xn2xmEnoSlpA&bvm=bv.139782543,d.bGg))
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
 
@@ -765,9 +758,12 @@ Es bringt uns keinerlei Vorteile mehr.
 ---
 # Server Push aktivieren
 
-Server Push für alle kritischen Ressourcen konfigurieren:
+Server Push für alle kritischen Ressourcen konfigurieren!
 
-z.B. in Apache via Header-Directive:
+---
+# Server Push aktivieren
+
+Inoffizieller Standard , solche Ressourcen zu für den Server zu kennzeichnen, läuft via Header-Directive:
 
 ```
 X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
