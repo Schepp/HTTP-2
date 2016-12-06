@@ -723,7 +723,7 @@ Siehe [HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implemen
 
 <br><br><br><br>
 <br><br><br><br>
-# Handlungsanweisungen
+# Handlungsempfehlungen
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_156956813_b.jpg" data-state="inverted faded" -->
 
