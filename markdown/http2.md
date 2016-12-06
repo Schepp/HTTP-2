@@ -655,13 +655,13 @@ Upgrade: HTTP/2.0
 ---
 <!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
 
-# Weltweit: 
-# 78.33% HTTP/2 Browser-Support
+# Browser-Support Weltweit: 
+# 78.33%
 ---
 <!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
 
-# Deutschland: 
-# 91.24% HTTP/2 Browser-Support
+# Browser-Support Deutschland: 
+# 91.24%
 ---
 #  HTTP/2 Support Desktop
 
@@ -798,14 +798,6 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 <br><br>
 # Profit!
 ---
-# Weiterführende Literatur
-
-* [HTTP/2 Frequently Asked Questions](http://http2.github.io/faq/)
-* [High Performance Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_UPGRADE)
-* [Making The Web Faster With SPDY](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
-* [SPDYCheck.org](http://spdycheck.org/)
-* [Evaluating the Performance of SPDY-enabled Web Servers](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
----
 <!-- .slide: data-background="images/backgrounds/8207553734_1cacc702f3_o.jpg" data-state="inverted faded" -->
 
 <br><br><br><br><br><br>
@@ -815,6 +807,14 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 * Twitter: [@derSchepp](https://twitter.com/derSchepp)
 * Podcast: [Working Draft](http://workingdraft.de)
 
+---
+# Weiterführende Literatur
+
+* [HTTP/2 Frequently Asked Questions](http://http2.github.io/faq/)
+* [High Performance Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_UPGRADE)
+* [Making The Web Faster With SPDY](http://blog.teamtreehouse.com/making-the-web-faster-with-spdy)
+* [SPDYCheck.org](http://spdycheck.org/)
+* [Evaluating the Performance of SPDY-enabled Web Servers](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
 ## Bildnachweise
 
