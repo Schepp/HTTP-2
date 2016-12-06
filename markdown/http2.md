@@ -556,7 +556,7 @@ Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
 
 ## Prioritized Streams
 
-Ebenso kann der Server Ressourcen, die er für relevant hält, mit höherer Priorität durch die Leitung drücken.
+Ebenso kann der Server Ressourcen, die er für relevant hält, initiativ durch die Leitung drücken.
 
 <p class="fragment">Das nennt sich dann "Server Push".</p>
 ---
@@ -653,24 +653,24 @@ Upgrade: HTTP/2.0
 (weniger ist besser)
 
 ---
-<!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
+<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
 
 # Weltweit: 
-# 78.33% HTTP/2 Support
+# 78.33% HTTP/2 Browser-Support
 ---
-<!-- .slide: data-background="images/Caniuse-SPDY.png" data-state="inverted" -->
+<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
 
 # Deutschland: 
-# 91.24% HTTP/2 Support
+# 91.24% HTTP/2 Browser-Support
 ---
 #  HTTP/2 Support Desktop
 
 | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10004; | 9+* | &#10004; | 11+** | &#10004;
+| &#10004; | 9+* | &#10004; | 11** | &#10004;
 
-*= ab OSX 10.11+<br>
-**= nur IE 11 auf Windows 10+, auf Windows 8 nur SPDY
+\*= ab OSX 10.11+<br>
+\**= auf Windows 10+, auf Windows 8 nur SPDY
 
 [Can I Use](http://caniuse.com/#feat=http2)
 ---
@@ -680,8 +680,8 @@ Upgrade: HTTP/2.0
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | &#10008;* | &#10004; | 9,2+ | &#10004; | &#10008;** | &#10004; |
 
-*= Wird gerade durch Chrome (Views) ersetzt<br>
-**= IE 11 auf Windows Mobile 8.1 kann SPDY
+\*= Wird gerade durch Chrome (Views) ersetzt<br>
+\**= IE 11 auf Windows Mobile 8.1 kann nur SPDY
 
 [Can I Use](http://caniuse.com/#feat=http2)
 ---
@@ -695,14 +695,14 @@ Upgrade: HTTP/2.0
 * Jetty 9.3+
 * und noch viele mehr&hellip;
 
-[HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementations) und [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
+Siehe [HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementations) und [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
 ---
 # Unterstützung seitens CDNs
 
-* Akamai (sogar mit Server Push!)
+* Akamai <b class="fragment">(mit Server Push!)</b>
 * CloudFlare
 * Amazon CloudFront
-* Fastly (mit Server Push!)
+* Fastly <b class="fragment">(mit Server Push!)</b>
 * und noch ein paar mehr.
 
 [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
@@ -763,7 +763,7 @@ Server Push für alle kritischen Ressourcen konfigurieren!
 ---
 # Server Push aktivieren
 
-Inoffizieller Standard , solche Ressourcen zu für den Server zu kennzeichnen, läuft via Header-Directive:
+Inoffizieller Standard , solche Ressourcen für den Server zu kennzeichnen, läuft via Header-Directive:
 
 ```
 X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
