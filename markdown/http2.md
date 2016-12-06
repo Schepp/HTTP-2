@@ -104,7 +104,7 @@ Um die Serverlast herunterzufahren wird die Anzahl erwünschter TCP-Verbindungen
 
 In der Praxis halten die Browser 6 Verbindungen zu einem Host auf.
 
-<p class="fragment">Stehen sie hinter einem Proxy sind es nur 2 - 4.</p>
+<p class="fragment">Stehen sie hinter einem Proxy <a href="https://www.stevesouders.com/blog/2008/03/20/roundup-on-parallel-connections/">sind es nur 2 - 4</a>.</p>
 ---
 # HTTP/1.1
 
