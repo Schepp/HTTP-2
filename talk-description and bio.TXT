@@ -5,3 +5,7 @@
 Für heutige Projekte ist HTTP/1.1 jedoch ein massiver Flaschenhals. Um dessen konzeptionelle Nachteile zu kompensieren, haben wir Buildprozesse entwickelt, bei denen wir Ressourcen via Concatenierung, Inlining oder Spriting b�ndeln. Dar�berhinaus setzen wir auf Konzepte wie Domain-Sharding und cookieless Domains.
 
 Die gute Nachricht ist: HTTP/2 steht endlich vor der T�r und r�umt mit den Nachteilen seines Vorg�ngers auf. Es wird au�erdem von den meisten modernen Browsern bereits unterst�tzt. Allerdings reicht es nicht aus, einfach nur einen Schalter umzulegen. Wir m�ssen massiv umdenken und etablierte Prozesse und Konzepte �ber Bord werfen, wenn wir das Beste aus HTTP/2 herausholen wollen.
+
+---
+
+Christian Schaefer, ist freiberuflicher Fullstack-Webentwickler aus D�sseldorf mit Fokus auf Frontend und Web Performance Optimization. Er ist au�erdem Organisator des Webworker NRW Treffs und Co-Host des Working Draft Podcasts.
