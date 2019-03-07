@@ -1,1 +1,0 @@
-Christian Schaefer, ist freiberuflicher Fullstack-Webentwickler aus Düsseldorf mit Fokus auf Frontend und Web Performance Optimization. Er ist außerdem Organisator des Webworker NRW Treffs und Co-Host des Working Draft Podcasts.
