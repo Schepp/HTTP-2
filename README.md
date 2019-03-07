@@ -1,8 +1,6 @@
 HTTP/2 - The Future is Now
 ======
 
-![Cover Image](images/backgrounds/shutterstock_150137660.jpg)
-
 Talk Slides: [https://schepp.github.io/HTTP-2/](https://schepp.github.io/HTTP-2/)
 
 ---
