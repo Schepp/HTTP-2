@@ -3,6 +3,8 @@ HTTP/2 - The Future is Now
 
 Talk Slides: [https://schepp.github.io/HTTP-2/](https://schepp.github.io/HTTP-2/)
 
+Talk Video: [Microsoft Technical Summit 2016 | HTTP/2 - die Zukunft beginnt jetzt](https://channel9.msdn.com/Events/microsoft-techncial-summit/Technical-Summit-2016/HTTP2-die-Zukunft-beginnt-jetzt)
+
 ---
 
 20 Jahre ist es her, dass die IETF HTTP/1.1 vorstellt hat. Das war zu einer Zeit, als Webseiten noch mit Tabellen und dem Font-Tag gestaltet wurden und sie mit kaum mehr als vier Bildern ausgestattet waren. Auf dieses Anwendungsszenario war HTTP/1.1 perfekt zugeschnitten. Für heutige Projekte ist HTTP/1.1 jedoch ein massiver Flaschenhals. Um dessen konzeptionelle Nachteile zu kompensieren, haben wir Build-Prozesse entwickelt, bei denen wir Ressourcen via Concatenierung, Inlining oder Spriting bündeln. Darüber hinaus setzen wir auf Konzepte wie Domain-Sharding und Cookieless Domains. Die gute Nachricht ist: HTTP/2 ist da und räumt mit den Nachteilen seines Vorgängers auf. Es wird außerdem von allem modernen Browsern unterstützt. Allerdings reicht es nicht aus, einfach nur einen Schalter umzulegen. Wir müssen massiv umdenken und etablierte Prozesse und Konzepte über Bord werfen, wenn wir das Beste aus HTTP/2 herausholen wollen.
