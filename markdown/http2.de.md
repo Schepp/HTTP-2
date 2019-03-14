@@ -562,7 +562,7 @@ Ebenso kann der Server Ressourcen, die er für relevant hält, initiativ durch d
 ---
 ## Server Push
 
-Von 640 Bildfragmenten werden zuerst die des Schriftzugs Übertragen:
+Von 640 Bildfragmenten werden zuerst die des Schriftzugs übertragen:
 
 <video data-autoplay class="stretch" loop src="images/server-push.mp4"></video>
 <!-- <iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe> -->

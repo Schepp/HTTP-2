@@ -422,23 +422,23 @@ If only a single element within one of these packages is updated, that package n
 <p class="fragment">&quot;Domain Sharding&quot;</p>
 
 <ul>
-	<li class="fragment">Jeder Extra-Host ermöglicht 6 zusätzliche TCP-Verbindungen</li>
-	<li class="fragment">Cookie-Header werden nur noch an den Haupt-Host gesendet</li>
+	<li class="fragment">each additional host allows for 6 additional TCP-Verbindungen</li>
+	<li class="fragment">cookie headers will only be sent to the main host</li>
 </ul>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
 
-# Nachteile:
+# Drawbacks:
 
-Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
-<p class="fragment">Jeder zusätzliche Host muss durch die TCP Slow Start Phase.</p>
-<p class="fragment">Ab 4 Hosts dreht sich der Vorteil ins Negative um.</p>
+Each additional host needs extra DNS resolving
+<p class="fragment">Each additional TCP connection needs to go through the TCP slow start phase.</p>
+<p class="fragment">With more than 3 hosts the advantage turns into a disadvantage.</p>
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_n1h1w9xP6K1raprkq.gif" data-state="inverted" -->
 
 <br><br><br><br>
 <br><br><br><br>
-# Puh, was für ein Aufwand!
+# Man, what an effort!
 ---
 <!-- .slide: data-background="images/reactions/SJxHr.gif" data-state="inverted" -->
 
@@ -454,17 +454,17 @@ Jeder zusätzliche Host muss per DNS-Abfrage aufgelöst werden.
 <br><br><br><br>
 <br><br><br><br>
 
-(siehe auch: [Genesis](https://en.wikipedia.org/wiki/HTTP/2#Genesis_in_and_later_differences_from_SPDY))
+(also see: [Genesis](https://en.wikipedia.org/wiki/HTTP/2#Genesis_in_and_later_differences_from_SPDY))
 ---
 # HTTP/2
 <!-- .slide: data-background="images/backgrounds/1761049_o.gif" data-state="inverted" -->
 
-Daten werden binär codiert übertragen.
+Data is transferred binary encoded
 
 <ul>
-	<li class="fragment">Effizienter zu parsen</li>
-	<li class="fragment">Kompakter</li>
-	<li class="fragment">Weniger fehleranfällig</li>
+	<li class="fragment">more efficient to parse</li>
+	<li class="fragment">more compact</li>
+	<li class="fragment">less error prone</li>
 </ul>
 ---
 # HTTP/2
@@ -476,13 +476,13 @@ Daten werden binär codiert übertragen.
 ---
 # HTTP/2
 
-Headerdaten werden nur einmal zwischen den Parteien ausgetauscht. Sie gelten fortan für alle nachfolgenden Requests automatisch.
+Header data is exchanged only once between the parties. From then on, they apply automatically to all subsequent requests.
 
-<p class="fragment">Wenn sich Header-Abschnitte später ändern, werden nur diese Teile neu übertragen (z.B. nach einem Login).</p>
+<p class="fragment">If certain headers need to change at a later point in time, only these changes are transmitted (e.g. after a login).</p>
 ---
 # HTTP/2
 
-Headerdaten werden komprimiert.
+Headers are being compressed
 
 > Google observed an ~88% reduction in the size of request headers and an ~85% reduction in the size of response headers after enabling compression. This amounted to a saving of between 45 and 1142 ms in the overall page load time.
 
@@ -490,7 +490,7 @@ Headerdaten werden komprimiert.
 ---
 # HTTP/2
 
-[Tests der University of Delaware](http://www.eecis.udel.edu/~amer/PEL/poc/pdf/SPDY-Fan.pdf):
+[Tests from the University of Delaware](http://www.eecis.udel.edu/~amer/PEL/poc/pdf/SPDY-Fan.pdf):
 
 | Request headers | 1st         | 2nd        |
 |-----------------|-------------|------------|
@@ -506,17 +506,17 @@ Headerdaten werden komprimiert.
 
 # HTTP/2
 
-Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
+Only a single TCP connection to each host is opened.
 
-<p class="fragment">Alle Übertragungsfragmente werden in diesen einen Datenstrom hineingewoben<span class="fragment"> (gemultiplexed)</span></p>
+<p class="fragment">All transfer fragments are woven into this one stream<span class="fragment"> (multiplexed)</span></p>
 
-<p class="fragment">Es handelt sich also um ein automatisches Spriting/Concatenieren auf Protokollebene!</p>
+<p class="fragment">The result is therefore automatic spriting/concatenation on protocol level!</p>
 ---
 <!-- .slide: data-background="images/HTTP-1.0-vs-SPDY.png" data-state="inverted" -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 [Source](http://de.slideshare.net/AndyDavies/are-todays-good-practices-tomorrows-performance-antipatterns-28286548#)
 ---
-# Der Vergleich
+# Comparison
 
 <video data-autoplay class="stretch" loop src="images/mod_spdy%20World%20Flags%20Demo.mp4"></video>
 
@@ -527,9 +527,9 @@ Es wird nur eine einzelne TCP-Verbindung zu jedem Host geöffnet.
 
 ## Prioritized Streams
 
-HTTP/2 kann das Mischverhältnis der in seinen Datenstrom gewobenen Daten zu jeder Zeit verändern und an neue Gegebenheiten anpassen.
+HTTP/2 can change the mixing ratio of the data woven into its data stream at any time and adapt it to new conditions.
 
-<p class="fragment">Auch kann die Übertragung einer angefangenen Datei komplett gestoppt und verworfen werden.</p>
+<p class="fragment">It is also possible to cancel the transfer of a file mid-flight.</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_199661090_b.jpg" data-state="inverted" -->
 
@@ -537,13 +537,13 @@ HTTP/2 kann das Mischverhältnis der in seinen Datenstrom gewobenen Daten zu jed
 
 ## Prioritized Streams
 
-Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
+The browser can request resources with different priorities:
 
 <ul>
-	<li class="fragment">Hoch: Hauptdokument & Frames</li>
-	<li class="fragment">Mittel: JavaScript, CSS und Fonts</li>
-	<li class="fragment">Niedrig: `<link rel="subresource">`, `<video>`, `<audio>`, `<object>` und AJAX-Calls</li>
-	<li class="fragment">Sehr niedrig: Bilder, Favicon</li>
+	<li class="fragment">high: main document & frames</li>
+	<li class="fragment">medium: JavaScript, CSS and fonts</li>
+	<li class="fragment">low: `<link rel="subresource">`, `<video>`, `<audio>`, `<object>` and AJAX calls</li>
+	<li class="fragment">Very low: images, favicon, print styles</li>
 </ul>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_199661090_b.jpg" data-state="inverted" -->
@@ -552,13 +552,13 @@ Der Browser kann so Ressourcen mit verschiedenen Prios anfordern:
 
 ## Prioritized Streams
 
-Ebenso kann der Server Ressourcen, die er für relevant hält, initiativ durch die Leitung drücken.
+The server can also push resources that it considers relevant on its own initiative.
 
-<p class="fragment">Das nennt sich dann "Server Push".</p>
+<p class="fragment">That's called "Server Push".</p>
 ---
 ## Server Push
 
-Von 640 Bildfragmenten werden zuerst die des Schriftzugs Übertragen:
+Of 640 image fragments, those with the lettering are pushed first:
 
 <video data-autoplay class="stretch" loop src="images/server-push.mp4"></video>
 <!-- <iframe width="420" height="315" src="//www.youtube.com/embed/4Ai_rrhM8gA" frameborder="0" allowfullscreen></iframe> -->
@@ -567,19 +567,19 @@ Von 640 Bildfragmenten werden zuerst die des Schriftzugs Übertragen:
 
 # HTTP/2
 
-ist bestandskompatibel und vollkommen transparent.
+is backwards-compatible and completely transparent.
 
-<p class="fragment">HTTP/2 wird grundsätzlich SSL-verschlüsselt verpackt, damit keine Übermittlungsstelle und auch kein Proxy etwas kaputt macht.</p>
+<p class="fragment">HTTP/2 is always TLS-encrypted, so that no transmitting instance or proxy can manipulate and break anything.</p>
 
-<p class="fragment">(um zu vermeiden, was mit HTTP-Pipelining passiert ist)</p>
+<p class="fragment">(to avoid what happened with HTTP pipelining)</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_201625775_b.jpg" data-state="inverted faded" -->
 
 # HTTP/2
 
-Zudem wird die SSL-Handshake-Phase genutzt, um sich gegenseitig über HTTP/2-Fähigkeiten zu informieren.
+The TLS handshake phase is also used to inform each other about HTTP/2 capabilities.
 ---
-Eine Aushandlung via unverschlüsseltem HTTP ist möglich:
+That said, a negotiation via unencrypted HTTP is possible:
 ```
 GET /page HTTP/1.1
 Host: server.example.com
@@ -587,25 +587,25 @@ Connection: Upgrade, HTTP2-Settings
 Upgrade: HTTP/2.0
 HTTP2-Settings: (SETTINGS payload in Base64)
 ```
-Gegenstelle kann kein HTTP/2:
+Remote peer cannot handle HTTP/2:
 ```
 HTTP/1.1 200 OK 3
 Content-length: 243
 Content-type: text/html
 (... HTTP 1.1 response ...)
 ```
-Gegenstelle kann HTTP/2:
+Remote peer can handle HTTP/2:
 ```
 HTTP/1.1 101 Switching Protocols 4
 Connection: Upgrade
 Upgrade: HTTP/2.0
 (... HTTP 2.0 response ...)
 ```
-<p class="fragment">(Anwendungsszenario: Server-zu-Server-Kommunikation)</p>
+<p class="fragment">(application scenario: server-to-server communication)</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_334616300.jpg" data-state="inverted faded" -->
 
-# Serverseitige Vorteile
+# Serverside Advantages
 
 > SPDY clients consume one Apache worker instead of six
 
@@ -621,7 +621,7 @@ Upgrade: HTTP/2.0
 ---
 <!-- .slide: data-state="smaller" -->
 
-# Ergebnisse
+# Results
 
 |                                                         | HTTP                                     | HTTPS                                    |SPDY                                     |
 |---------------------------------------------------------|------------------------------------------|------------------------------------------|-----------------------------------------|
@@ -633,7 +633,7 @@ Upgrade: HTTP/2.0
 | First error                                             | 405 Users                                | 225 Users                                | 884 Users                               |
 
 ---
-# Speicherverbrauch
+# Memory Consumption
 
 | System Memory | 01:00    | 02:00    | Diff = Consumed              |
 |---------------|----------|----------|------------------------------|
@@ -646,145 +646,89 @@ Upgrade: HTTP/2.0
 
 ![CPU Idle Times](images/spdy-linux-cpu-idle.png)
 
-(weniger ist besser)
+(less is better)
 
 ---
 <!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
 
-# Browser-Support Weltweit: 
-# 78.33%
+# Browser Support 
+# 86.81%
 ---
-<!-- .slide: data-background="images/Caniuse-HTTP2.png" data-state="inverted" -->
+# Server Support
 
-# Browser-Support Deutschland: 
-# 91.24%
----
-#  HTTP/2 Support Desktop
-
-| ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/safari.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10004; | 9+* | &#10004; | 11** | &#10004;
-
-\*= ab OSX 10.11+<br>
-\**= auf Windows 10+, auf Windows 8 nur SPDY
-
-[Can I Use](http://caniuse.com/#feat=http2)
----
-# HTTP/2 Support Mobile
-
-| ![Android](images/browserlogos/android.png) | ![Chrome](images/browserlogos/chrome.png) | ![Safari](images/browserlogos/ios.png) | ![Firefox](images/browserlogos/firefox.png) | ![IE](images/browserlogos/ie.png) | ![Edge](images/browserlogos/edge.png) |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| &#10008;* | &#10004; | 9,2+ | &#10004; | &#10008;** | &#10004; |
-
-\*= Wird gerade durch Chrome (Views) ersetzt<br>
-\**= IE 11 auf Windows Mobile 8.1 kann nur SPDY
-
-[Can I Use](http://caniuse.com/#feat=http2)
----
-# Serverseitige Unterstützung
-
-* Apache HTTP Server 2.4.17+ (ansonsten: [mod_h2](https://github.com/icing/mod_h2))
+* Apache HTTP Server 2.4.17+
 * Apache Tomcat 8.5+
 * NGINX 1.9.5+
-* IIS auf Windows 10 und Windows Server 2016
-* Node.js 5.0+
+* IIS on Windows 10 or Windows Server 2016+
+* Node.js 8+
 * Jetty 9.3+
-* und noch viele mehr&hellip;
+* and many more&hellip;
 
-Siehe [HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementations) und [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
+See [HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementations) and [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
 ---
-# Unterstützung seitens CDNs
+# CDN Support
 
-* Akamai <b class="fragment">(mit Server Push!)</b>
-* CloudFlare
+* Akamai (with Server Push!)
+* CloudFlare (with Server Push!)
+* Fastly (with Server Push!)
+* Microsoft Azure
 * Amazon CloudFront
-* Fastly <b class="fragment">(mit Server Push!)</b>
-* und noch ein paar mehr.
+* and a few more.
 
 [Wikipedia](https://en.wikipedia.org/wiki/HTTP/2#Software_and_services_supporting_HTTP.2F2)
----
-<!-- .slide: data-background="images/backgrounds/5261568726_d51149d62c_b.jpg" data-state="inverted faded" -->
-
-# Firmen und Websiten, die HTTP/2 nutzen
-
-* Google
-* Yahoo
-* Facebook
-* Twitter
-* WordPress.com
-* Synology
-
 ---
 <!-- .slide: data-background="images/reactions/tumblr_inline_mxzcnayKCb1raprkq.gif" data-state="inverted" -->
 
 <br><br><br><br>
 <br><br><br><br>
-# Handlungsempfehlungen
+# Recommendations
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_156956813_b.jpg" data-state="inverted faded" -->
 
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br>
-# Ab jetzt HTTP/2 nutzen!
+# Start using HTTP/2 now!
 
-<p class="fragment">(Notfalls via [zwischengeschaltetem HTTP/2-fähigem Load-Balancer](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih0sauv9rQAhUFEywKHYS3DTAQFggaMAA&url=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fhigh-performance-browser%2F9781449344757%2Fch13.html&usg=AFQjCNGJiVCDdoF0iAC2ch9b66idBsmcuA&sig2=_nJIXeYIw0Xn2xmEnoSlpA&bvm=bv.139782543,d.bGg))
+<p class="fragment">(If necessary via [intermediate HTTP/2-capable load balancer](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwih0sauv9rQAhUFEywKHYS3DTAQFggaMAA&url=https%3A%2F%2Fwww.safaribooksonline.com%2Flibrary%2Fview%2Fhigh-performance-browser%2F9781449344757%2Fch13.html&usg=AFQjCNGJiVCDdoF0iAC2ch9b66idBsmcuA&sig2=_nJIXeYIw0Xn2xmEnoSlpA&bvm=bv.139782543,d.bGg))
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_201459827.png" data-state="inverted faded" -->
 
-# Domain-Sharding vermeiden!
+# Avoid Domain-Sharding!
 
-Es bringt uns keinerlei Vorteile mehr.
+It doesn't give us any more advantages.
 
-<p class="fragment">(stattdessen erzeugt es nur überflüssige DNS-Lookups)</p>
+<p class="fragment">(instead it only creates superfluous DNS lookups)</p>
 
-<p class="fragment">Außerdem: Ein einzelner Host kann die Ressourcen-Priorisierung besser verwalten.</p>
+<p class="fragment">also: A single host can better manage resource prioritization.</p>
 
-<p class="fragment">[Den Einsatz von CDNs neu abwägen](https://thethemefoundry.com/blog/why-we-dont-use-a-cdn-spdy-ssl/).</p>
+<p class="fragment">[re-evaluate the use of CDNs](https://thethemefoundry.com/blog/why-we-dont-use-a-cdn-spdy-ssl/).</p>
 ---
 <!-- .slide: data-background="images/backgrounds/shutterstock_4021051.jpg" data-state="inverted faded" -->
 
-# Spriting und Concatenieren absolut vermeiden!
+# Avoid spriting and concatenation!
 
-<p class="fragment">Stattdessen: Zusehen, ob man seine Dateien nicht automatisiert noch kleiner bekommt!</p>
+Stop trying to reduce the amount requests<span class="fragment"> - [if it's not a thousand](https://medium.com/@asyncmax/the-right-way-to-bundle-your-assets-for-faster-sites-over-http-2-437c37efe3ff)</span>
 
-<p class="fragment">(verrückt, oder?)</p>
-
-<p class="fragment">(Aber so kommen wir nah an das Konzept von Delta-Updates heran)</p>
+<p class="fragment">(that way we get closer to the concept of delta updates)</p>
 ---
-# Server Push aktivieren
+# Activate Server Push
 
-Server Push für alle kritischen Ressourcen konfigurieren!
+Configure server push for all critical resources!
 
 ---
-# Server Push aktivieren
+# Activate Server Push
 
-Inoffizieller Standard , solche Ressourcen für den Server zu kennzeichnen, läuft via Header-Directive:
+Is has established itself to describe resources to push via Link headers of type preload:
 
 ```
-X-Associated-Content: "/foo.css":1,"/bar.js":1,"/baz.js":1
+Link: "</assets/css/common.css>;rel=preload;as=style"
 ```
 
-(Prio 0 = Hoch, Prio 7 = Niedrig)
----
-<!-- .slide: data-background="images/backgrounds/xp.jpg" data-state="inverted faded" -->
-
-# Legacy Browser?
-
-Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
----
-# Apaches mod_pagespeed
+Should the header be meant for the client and not as push hint, set an additional `no-push` property:
 
 ```
-# Disable concatenation for SPDY/HTTP 2.0 clients
-<ModPagespeedIf spdy>
-  ModPagespeedDisableFilters combine_css,combine_javascript
-</ModPagespeedIf>
-
-# Shard assets for HTTP 1.x clients only
-<ModPagespeedIf !spdy>
-  ModPagespeedShardDomain www.site.com s1.site.com,s2.site.com
-</ModPagespeedIf>
+Link: "</assets/css/common.css>;rel=preload;as=style;no-push"
 ```
 ---
 <!-- .slide: data-background="images/reactions/tumblr_mnj888Jab71s6z99jo1_500.gif" data-state="inverted" -->
@@ -797,14 +741,14 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 <!-- .slide: data-background="images/backgrounds/8207553734_1cacc702f3_o.jpg" data-state="inverted faded" -->
 
 <br><br><br><br><br><br>
-## Danke!
+## Thank you!
 
 * Slides: [http://schepp.github.io/HTTP-2](http://schepp.github.io/HTTP-2)
 * Twitter: [@derSchepp](https://twitter.com/derSchepp)
 * Podcast: [Working Draft](http://workingdraft.de)
 
 ---
-# Weiterführende Literatur
+# Further literature
 
 * [HTTP/2 Frequently Asked Questions](http://http2.github.io/faq/)
 * [High Performance Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html#HTTP2_UPGRADE)
@@ -812,7 +756,7 @@ Was tun, wenn man gleichzeitig viele alte Clients bedienen muss?
 * [SPDYCheck.org](http://spdycheck.org/)
 * [Evaluating the Performance of SPDY-enabled Web Servers](http://www.neotys.com/blog/performance-of-spdy-enabled-web-servers/)
 ---
-## Bildnachweise
+## Picture Credits
 
 <ul class="multicolumn">
 
