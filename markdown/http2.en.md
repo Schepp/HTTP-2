@@ -422,7 +422,7 @@ If only a single element within one of these packages is updated, that package n
 <p class="fragment">&quot;Domain Sharding&quot;</p>
 
 <ul>
-	<li class="fragment">each additional host allows for 6 additional TCP-Verbindungen</li>
+	<li class="fragment">each additional host allows for 6 additional TCP connections</li>
 	<li class="fragment">cookie headers will only be sent to the main host</li>
 </ul>
 ---
@@ -696,7 +696,7 @@ See [HTTP/2 Implementations](https://github.com/http2/http2-spec/wiki/Implementa
 
 # Avoid Domain-Sharding!
 
-It doesn't give us any more advantages.
+It doesn't give us advantages any more.
 
 <p class="fragment">(instead it only creates superfluous DNS lookups)</p>
 
